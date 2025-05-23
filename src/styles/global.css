@@ -3,47 +3,48 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-    :root {
-        /* Background Colors */
-        --bg: #ffffff;
-        --header-bg: #f3f5f8;
+  :root {
+    /* Background Colors */
+    --bg: #ffffff;
+    --header-bg: #f3f5f8;
 
-        /* Accent Colors */
-        --accent: #f6323e;
+    /* Accent Colors */
+    --accent: #f6323e;
 
-        /* Typography Colors */
-        --content: #69707a;
-    }
+    /* Typography Colors */
+    --content: #69707a;
+  }
 
-    .dark {
-        /* Background Colors */
-        --bg: #222324;
-        --header-bg: #292929;
+  .dark {
+    /* Background Colors */
+    --bg: #222324;
+    --header-bg: #292929;
 
-        /* Accent Colors */
-        --accent: #f6323e;
+    /* Accent Colors */
+    --accent: #f6323e;
 
-        /* Typography Colors */
-        --content: #aaaaaa;
-    }
+    /* Typography Colors */
+    --content: #aaaaaa;
+  }
 
-    html, body, div#root {
-        min-height: 100vh;
-        min-width: 100vw;
-        margin: 0;
-        padding: 0;
-    }
+  html,
+  body,
+  div#root {
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @theme {
-    /* Background Colors */
-    --color-background: var(--bg);
-    --color-header: var(--header-bg);
+  /* Background Colors */
+  --color-background: var(--bg);
+  --color-header: var(--header-bg);
 
-    /* Accent Colors */
-    --color-accent: var(--accent);
+  /* Accent Colors */
+  --color-accent: var(--accent);
 
-
-    /* Typography Colors */
-    --color-content: var(--content);
+  /* Typography Colors */
+  --color-content: var(--content);
 }
