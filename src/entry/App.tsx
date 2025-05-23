@@ -1,5 +1,8 @@
 import Navbar from "@/views/layout/Navbar"
 import Footer from "@/views/layout/Footer"
+import Routes from "@/views/routes/Routes"
+
+import { BrowserRouter as Router } from "react-router-dom";
 
 export default function App() {
 
@@ -8,8 +11,11 @@ export default function App() {
 
             <Navbar />
 
-            <div className='w-full bg-background text-content'>Hello SPMods</div>
-            <div className='w-full bg-accent text-text'>Hello SPMods</div>
+            <Router>
+                <main className="grow bg-background">
+                    <Routes />
+                </main>
+            </Router>
 
             <Footer />
         </div>
