@@ -12,3 +12,5 @@ const PageRoutes: React.FC = () => (
         <Route path="/demo" Component={DemoContainer} />
     </Routes>
 )
+
+export default PageRoutes;

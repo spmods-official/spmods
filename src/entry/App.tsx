@@ -1,6 +1,6 @@
 import Navbar from "@/views/layout/Navbar"
 import Footer from "@/views/layout/Footer"
-import Routes from "@/views/routes/Routes"
+import PageRoutes from "@/views/routes/Routes"
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export default function App() {
 
             <Router>
                 <main className="grow bg-background">
-                    <Routes />
+                    <PageRoutes />
                 </main>
             </Router>
 
