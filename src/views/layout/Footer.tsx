@@ -1,8 +1,9 @@
 import ExternalLink from "@/views/components/ExternalLink";
 import { externalLinkVariants } from "@/views/components/ExternalLink.variants";
+import type { FC } from "react";
 import { Link } from "react-router";
 
-export default function Footer() {
+const Footer: FC = () => {
   return (
     <footer className="mt-auto py-[3rem] pl-[1rem] bg-header">
       <div className="inline">
@@ -46,4 +47,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
