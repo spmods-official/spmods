@@ -1,24 +1,20 @@
-import Navbar from "@/views/layout/Navbar"
-import Footer from "@/views/layout/Footer"
-import PageRoutes from "@/views/routes/Routes"
+import Navbar from "@/views/layout/Navbar";
+import Footer from "@/views/layout/Footer";
 
-import { BrowserRouter as Router } from "react-router-dom";
+import useThemeEffect from "@/views/hooks/useThemeEffect";
+import type { FC, PropsWithChildren } from "react";
 
-export default function App() {
+const App: FC<PropsWithChildren> = ({ children }) => {
+  useThemeEffect();
+  return (
+    <div className="flex flex-col min-h-[100vh] w-full h-full">
+      <Navbar />
 
-    return (
-        <div className="flex flex-col min-h-[100vh] w-full h-full">
+      <main className="grow bg-background">{children}</main>
 
-            <Navbar />
+      <Footer />
+    </div>
+  );
+};
 
-            <Router>
-                <main className="grow bg-background">
-                    <PageRoutes />
-                </main>
-            </Router>
-
-            <Footer />
-        </div>
-    )
-}
-
+export default App;

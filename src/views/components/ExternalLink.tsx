@@ -1,17 +1,31 @@
-import { forwardRef } from 'react';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from "react";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 
-type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string;
-    children: ReactNode;
-};
+import { externalLinkVariants } from "./ExternalLink.variants";
+import type { ExternalLinkVariantsProps } from "./ExternalLink.variants";
+import { cn } from "@/utils/cn";
 
-// Renders an anchor tag that safely opens href in a new tab or window.
-// See https://mathiasbynens.github.io/rel-noopener/
-const ExternalLink = forwardRef<HTMLAnchorElement, Props>(({ children, ...otherProps }, ref) => (
-    <a target="_blank" rel="noopener noreferrer" ref={ref} {...otherProps}>
-        {children}
+interface ExternalLinkProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    ExternalLinkVariantsProps {
+  href: string;
+  children: ReactNode;
+}
+
+const ExternalLink = forwardRef<HTMLAnchorElement, ExternalLinkProps>(
+  ({ className, intent, children, ...props }, ref) => (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(externalLinkVariants({ intent, className }))}
+      ref={ref}
+      {...props}
+    >
+      {children}
     </a>
-));
+  ),
+);
+
+ExternalLink.displayName = "ExternalLink";
 
 export default ExternalLink;

@@ -1,12 +1,26 @@
-import useColorScheme from "@/views/hooks/useColorScheme"
-import { DARK_COLOR_SCHEME } from "@/types/settings"
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { DARK_COLOR_SCHEME } from "@/types/settings";
+import { Link } from "react-router";
+import { selectColorScheme } from "@/slices/settings";
 
 export default function Navbar() {
-    const logoSrc = useColorScheme() !== DARK_COLOR_SCHEME ? 'light_logo.png' : 'dark_logo.png';
-    return (
-        <nav className='py-[1rem] pl-[1rem] bg-header'>
-            <img src={logoSrc} alt="SPMods Logo" className="h-[2rem] w-[14rem]" draggable="false"></img>
-        </nav>
-    )
+  const colorScheme = useSelector(selectColorScheme);
+  const logoSrc = useMemo(
+    () =>
+      colorScheme === DARK_COLOR_SCHEME ? "dark_logo.png" : "light_logo.png",
+    [colorScheme],
+  );
+  return (
+    <nav className="py-[1rem] pl-[1rem] bg-header">
+      <Link to="/">
+        <img
+          src={logoSrc}
+          alt="SPMods Logo"
+          className="h-[2rem] w-[14rem]"
+          draggable="false"
+        ></img>
+      </Link>
+    </nav>
+  );
 }
-
