@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchContributors } from "@/apis/github";
-
-type Contributor = {
-  name: string;
-  avatar: string;
-  commits: number;
-};
+import type { Contributor } from "@/types/contributor";
 
 export default function ContributorList() {
   const [contributors, setContributors] = useState<Contributor[] | null>(null);
@@ -25,26 +20,20 @@ export default function ContributorList() {
         contributors who have helped us make this project possible.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl">
-        {contributors.map((c) => (
-          <div key={c.name} className="flex flex-col items-center p-6">
+        {contributors.map((contributor) => (
+          <div
+            key={contributor.name}
+            className="flex flex-col items-center p-6"
+          >
             <img
-              src={c.avatar}
-              alt={c.name}
+              src={contributor.avatar}
+              alt={contributor.name}
               className="w-full h-full rounded-full mb-3"
             />
             <h3 className="font-semibold flex items-center">
-              <span>{c.name}</span>
-              {c.name === "moustacheManHere" && (
-                <span
-                  className="inline-block rotate-30 -translate-y-3"
-                  aria-label="ram-crown"
-                  role="img"
-                >
-                  👑
-                </span>
-              )}
+              <span>{contributor.name}</span>
             </h3>
-            <p className="text-gray-500">{c.commits} commits</p>
+            <p className="text-gray-500">{contributor.commits} commits</p>
           </div>
         ))}
       </div>
