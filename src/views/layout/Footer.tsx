@@ -1,7 +1,5 @@
-import {
-  ExternalLink,
-  externalLinkVariants,
-} from "@/views/components/ExternalLink";
+import ExternalLink from "@/views/components/ExternalLink";
+import { externalLinkVariants } from "@/views/components/ExternalLink.variants";
 import { Link } from "react-router";
 
 export default function Footer() {
