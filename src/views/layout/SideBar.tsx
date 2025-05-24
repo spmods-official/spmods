@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Home, Info, Settings } from "react-feather";
+import { Home, Info, Settings, Users } from "react-feather";
 
 // Modify this to add more routes
 const routes = [
@@ -18,6 +18,11 @@ const routes = [
     path: "/settings",
     name: "Settings",
     icon: Settings,
+  },
+  {
+    path: "/contributors",
+    name: "Contributors",
+    icon: Users,
   },
 ];
 
