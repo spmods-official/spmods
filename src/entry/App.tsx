@@ -1,6 +1,6 @@
 import Navbar from "@/views/layout/Navbar";
 import Footer from "@/views/layout/Footer";
-import SideBar from "@/views/layout/SideBar";
+import Sidebar from "@/views/layout/Sidebar";
 
 import useThemeEffect from "@/views/hooks/useThemeEffect";
 import type { FC, PropsWithChildren } from "react";
@@ -13,7 +13,7 @@ const App: FC<PropsWithChildren> = ({ children }) => {
 
       <div className="flex grow">
         <div className="flex-shrink-0">
-          <SideBar/>
+          <Sidebar />
         </div>
         <main className="grow bg-background">{children}</main>
       </div>
