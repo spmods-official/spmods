@@ -1,6 +1,6 @@
 import Navbar from "@/views/layout/Navbar";
 import Footer from "@/views/layout/Footer";
-import Sidebar from "@/views/layout/Sidebar";
+import Sidebar from "@/views/layout/SideBar";
 
 import useThemeEffect from "@/views/hooks/useThemeEffect";
 import type { FC, PropsWithChildren } from "react";
