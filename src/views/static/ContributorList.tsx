@@ -25,7 +25,14 @@ export default function ContributorList() {
         {contributors.map((c) => (
           <div key={c.name} className="flex flex-col items-center p-6">
             <img src={c.avatar} alt={c.name} className="w-full h-full rounded-full mb-3" />
-            <h3 className="font-semibold">{c.name}</h3>
+            <h3 className="font-semibold flex items-center">
+              <span>{c.name}</span>
+              {c.name === "moustacheManHere" && (
+                <span className="inline-block rotate-30 -translate-y-3" aria-label="ram-crown" role="img">
+                  👑
+                </span>
+              )}
+            </h3>
             <p className="text-gray-500">{c.commits} commits</p>
           </div>
         ))}
