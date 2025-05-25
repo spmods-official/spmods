@@ -1,10 +1,10 @@
-import { useMemo } from "react";
+import { useMemo, type FC } from "react";
 import { useSelector } from "react-redux";
 import { DARK_COLOR_SCHEME } from "@/types/settings";
 import { Link } from "react-router";
 import { selectColorScheme } from "@/slices/settings";
 
-export default function Navbar() {
+const Navbar: FC = () => {
   const colorScheme = useSelector(selectColorScheme);
   const logoSrc = useMemo(
     () =>
@@ -23,4 +23,6 @@ export default function Navbar() {
       </Link>
     </nav>
   );
-}
+};
+
+export default Navbar;
