@@ -6,6 +6,8 @@ import jsxA11Y from 'eslint-plugin-jsx-a11y'
 import prettier from 'eslint-plugin-prettier'
 import tseslint from 'typescript-eslint'
 import react from "eslint-plugin-react";
+// TODO: Add tailwind once plugin supports tailwind v4
+// import tailwind from 'eslint-plugin-tailwindcss'
 
 export default tseslint.config(
     { ignores: ['dist'] },
@@ -25,7 +27,7 @@ export default tseslint.config(
             'react-hooks': reactHooks,
             "jsx-a11y": jsxA11Y,
             'prettier': prettier,
-            'react-refresh': reactRefresh,
+            'react-refresh': reactRefresh
         },
         rules: {
             ...reactHooks.configs.recommended.rules,
@@ -34,7 +36,7 @@ export default tseslint.config(
                 'warn',
                 { allowConstantExport: true },
             ],
-            'react/react-in-jsx-scope': "off"
+            'react/react-in-jsx-scope': "off",
         },
     },
 )

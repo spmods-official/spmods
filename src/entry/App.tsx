@@ -8,7 +8,7 @@ import type { FC, PropsWithChildren } from "react";
 const App: FC<PropsWithChildren> = ({ children }) => {
   useThemeEffect();
   return (
-    <div className="flex flex-col min-h-[100vh] w-full h-full">
+    <div className="flex flex-col min-h-screen w-full h-full">
       <Navbar />
 
       <div className="flex grow">

@@ -28,6 +28,7 @@ The application should now be running at [http://localhost:5173]
         ├── apis/              - Functions for interacting with external APIs
         ├── app/               - Core application setup
         ├── entry/             - Application entry point and root components
+        ├── resources/         - Suspense resources and related loaders
         ├── slices/            - Redux slices
         ├── styles/            - CSS Custom Properties
         ├── types/             - Type definitions

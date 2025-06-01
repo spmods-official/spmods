@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Footer: FC = () => {
   return (
-    <footer className="mt-auto py-[3rem] pl-[1rem] bg-header">
+    <footer className="mt-auto py-12 pl-sidebar bg-header">
       <div className="inline">
         <ul className="space-x-[1rem]">
           <li className="inline">
