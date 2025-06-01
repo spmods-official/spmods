@@ -33,7 +33,9 @@ function ContributorListContent() {
             <ExternalLink href={contributor.html_url} intent="primary">
               {contributor.login}
             </ExternalLink>
-            <p className="text-muted">{contributor.contributions} commits</p>
+            <p className="text-content-muted">
+              {contributor.contributions} commits
+            </p>
           </div>
         ))}
       </ResponsiveGrid>
