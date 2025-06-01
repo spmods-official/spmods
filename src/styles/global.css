@@ -57,8 +57,8 @@
   /* Typography Color Variants */
   --color-content: var(--content);
   --color-content-muted: var(--content)/70;
-  --color-content-subtle: var(--content)/70;
-  --color-content-faint: var(--content)/70;
+  --color-content-subtle: var(--content)/50;
+  --color-content-faint: var(--content)/30;
 
   /* Spacing */
   --spacing-sidebar: 15rem;
