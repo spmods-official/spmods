@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/app/configureStore";
 import type { ColorSchemePreference } from "@/types/settings";
-import { LIGHT_COLOR_SCHEME_PREFERENCE, DARK_COLOR_SCHEME_PREFERENCE } from "@/types/settings";
+import { SYSTEM_COLOR_SCHEME_PREFERENCE, LIGHT_COLOR_SCHEME_PREFERENCE, DARK_COLOR_SCHEME_PREFERENCE } from "@/types/settings";
 import { selectColorSchemePreference, changeColorSchemePreference } from "@/slices/settings";
 
 export default function SettingsContainer() {
@@ -20,6 +20,17 @@ export default function SettingsContainer() {
     <div className="p-6">
       <h2 className="text-xl font-semibold mb-4">Toggle Light & Dark Mode</h2>
       <fieldset>
+        <label className="flex items-center mb-2">
+          <input
+            type="radio"
+            name="color-scheme"
+            value={SYSTEM_COLOR_SCHEME_PREFERENCE}
+            checked={currentColor === SYSTEM_COLOR_SCHEME_PREFERENCE}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          Auto
+        </label>
         <label className="flex items-center mb-2">
           <input
             type="radio"
