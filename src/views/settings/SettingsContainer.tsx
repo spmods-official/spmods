@@ -1,59 +1,11 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "@/app/configureStore";
-import type { ColorSchemePreference } from "@/types/settings";
-import { SYSTEM_COLOR_SCHEME_PREFERENCE, LIGHT_COLOR_SCHEME_PREFERENCE, DARK_COLOR_SCHEME_PREFERENCE } from "@/types/settings";
-import { selectColorSchemePreference, changeColorSchemePreference } from "@/slices/settings";
+import { ModeSelect } from "./ModeSelect";
 
 export default function SettingsContainer() {
-  const dispatch = useDispatch();
-  const currentColor = useSelector<RootState, ColorSchemePreference>(
-    (state) => selectColorSchemePreference(state)
-  );
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newPref = e.target.value as ColorSchemePreference;
-    dispatch(changeColorSchemePreference(newPref));
-  };
-
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-semibold mb-4">Toggle Light & Dark Mode</h2>
-      <fieldset>
-        <label className="flex items-center mb-2">
-          <input
-            type="radio"
-            name="color-scheme"
-            value={SYSTEM_COLOR_SCHEME_PREFERENCE}
-            checked={currentColor === SYSTEM_COLOR_SCHEME_PREFERENCE}
-            onChange={handleChange}
-            className="mr-2"
-          />
-          Auto
-        </label>
-        <label className="flex items-center mb-2">
-          <input
-            type="radio"
-            name="color-scheme"
-            value={LIGHT_COLOR_SCHEME_PREFERENCE}
-            checked={currentColor === LIGHT_COLOR_SCHEME_PREFERENCE}
-            onChange={handleChange}
-            className="mr-2"
-          />
-          Light
-        </label>
-        <label className="flex items-center">
-          <input
-            type="radio"
-            name="color-scheme"
-            value={DARK_COLOR_SCHEME_PREFERENCE}
-            checked={currentColor === DARK_COLOR_SCHEME_PREFERENCE}
-            onChange={handleChange}
-            className="mr-2"
-          />
-          Dark
-        </label>
-      </fieldset>
+    <div className="p-5 text-content">
+      <h2 className="text-3xl font-bold mb-6">Settings Options</h2>
+      <h3 className="text-2xl font-semibold mb-3">Dark Mode</h3>
+      <ModeSelect />
     </div>
   );
 }
