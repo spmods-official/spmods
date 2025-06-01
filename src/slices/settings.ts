@@ -10,7 +10,7 @@ import {
   DARK_COLOR_SCHEME_PREFERENCE,
   LIGHT_COLOR_SCHEME_PREFERENCE,
 } from "@/types/settings";
-import type { ColorSchemePreference } from "@/types/settings";
+import type { ColorSchemePreference, ColorScheme } from "@/types/settings";
 
 const defaultSettingsState: SettingsState = {
   colorSchemePreference: SYSTEM_COLOR_SCHEME_PREFERENCE,
@@ -35,15 +35,10 @@ const settingsSlice = createSlice({
       state.colorSchemePreference,
     selectColorScheme: createSelector(
       (state: SettingsState) => state.colorSchemePreference,
-      (colorSchemePreference) => {
-        // Set to true for now (use media query to check later on)
-        const systemPrefersDarkColorScheme = true;
-
+      (colorSchemePreference): ColorScheme | null => {
         switch (colorSchemePreference) {
           case SYSTEM_COLOR_SCHEME_PREFERENCE:
-            return systemPrefersDarkColorScheme
-              ? DARK_COLOR_SCHEME
-              : LIGHT_COLOR_SCHEME;
+            return null;
           case LIGHT_COLOR_SCHEME_PREFERENCE:
             return LIGHT_COLOR_SCHEME;
           case DARK_COLOR_SCHEME_PREFERENCE:
