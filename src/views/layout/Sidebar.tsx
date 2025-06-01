@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Home, Info, Settings, Users } from "react-feather";
 
-// Modify this to add more routes
 const routes = [
   {
     path: "/",
