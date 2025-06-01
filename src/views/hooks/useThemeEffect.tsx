@@ -5,12 +5,14 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 export default function useThemeEffect() {
-    const colorScheme: ColorScheme = useSelector<RootState, ColorScheme>(selectColorScheme);
+  const colorScheme: ColorScheme = useSelector<RootState, ColorScheme>(
+    selectColorScheme,
+  );
 
-    useEffect(() => {
-        document.documentElement.classList.toggle(
-            "dark",
-            colorScheme === DARK_COLOR_SCHEME,
-        );
-    }, [colorScheme]);
+  useEffect(() => {
+    document.documentElement.classList.toggle(
+      "dark",
+      colorScheme === DARK_COLOR_SCHEME,
+    );
+  }, [colorScheme]);
 }
