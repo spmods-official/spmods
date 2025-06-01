@@ -1,10 +1,6 @@
-type Contributor = {
-  login: string;
-  avatar_url: string;
-  contributions: number;
-};
+import type { Contributor } from "@/types/contributor";
 
-export async function fetchContributors() {
+export async function fetchContributors(): Promise<Contributor[]> {
   const response = await fetch(
     "https://api.github.com/repos/spmods-official/spmods/contributors",
   );
@@ -15,11 +11,5 @@ export async function fetchContributors() {
 
   const data: Contributor[] = await response.json();
 
-  const parsed = data.map((user) => ({
-    name: user.login,
-    avatar: user.avatar_url,
-    commits: user.contributions,
-  }));
-
-  return parsed;
+  return data.filter((contributor) => contributor.type === "User");
 }

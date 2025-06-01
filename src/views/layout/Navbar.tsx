@@ -12,12 +12,12 @@ const Navbar: FC = () => {
     [colorScheme],
   );
   return (
-    <nav className="py-[1rem] pl-[1rem] bg-header">
+    <nav className="p-4 bg-header">
       <Link to="/">
         <img
           src={logoSrc}
           alt="SPMods Logo"
-          className="h-[2rem] w-[14rem]"
+          className="h-8 w-56"
           draggable="false"
         ></img>
       </Link>

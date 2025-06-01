@@ -8,9 +8,6 @@
     --bg: #ffffff;
     --header-bg: #f3f5f8;
 
-    /* Accent Colors */
-    --accent: #f6323e;
-
     /* Typography Colors */
     --content: #69707a;
   }
@@ -19,9 +16,6 @@
     /* Background Colors */
     --bg: #222324;
     --header-bg: #292929;
-
-    /* Accent Colors */
-    --accent: #f6323e;
 
     /* Typography Colors */
     --content: #aaaaaa;
@@ -42,9 +36,14 @@
   --color-background: var(--bg);
   --color-header: var(--header-bg);
 
-  /* Accent Colors */
-  --color-accent: var(--accent);
+  /* primary Colors */
+  --color-primary: #f6323e;
 
   /* Typography Colors */
   --color-content: var(--content);
+  --color-muted: var(--content)/70;
+
+  /* Spacing */
+  --spacing-sidebar: 15rem;
 }
+
