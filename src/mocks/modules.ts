@@ -11,7 +11,7 @@ export const placeholderModules: Module[] = [
     learn how to solve and automate tasks through programming. Students will 
     be taught programming fundamentals such as variables, data types, operators, 
     control structures, methods and data structures such as arrays. At the end 
-    of the module, students will be competent in using programming for problem solving.`
+    of the module, students will be competent in using programming for problem solving.`,
   },
   {
     name: "Fundamentals of Computing",
@@ -25,7 +25,7 @@ export const placeholderModules: Module[] = [
     UNIX commands / system tools for user management, software installation, 
     network administration and configuration of services. These topics are essential 
     and prerequisite to an Application Developer for building and deployment of a 
-    software system.`
+    software system.`,
   },
   {
     name: "Mathematics",
@@ -36,6 +36,6 @@ export const placeholderModules: Module[] = [
     description: `Equips students with knowledge in mathematics and analytical skills 
     to solve problems related to infocomm technology. Topics include matrices, 
     linear transformation, number systems, set theory, logic, Boolean algebra, 
-    techniques of counting and probability.`
-  }
+    techniques of counting and probability.`,
+  },
 ];
