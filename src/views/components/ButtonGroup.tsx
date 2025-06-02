@@ -66,11 +66,12 @@ const ButtonGroup = ({
 
 const ButtonGroupItem = ({
   children,
+  active = false,
   onClick,
   ...props
 }: PropsWithChildren<ButtonGroupItemProps>) => {
   return (
-    <button onClick={onClick} {...props}>
+    <button onClick={onClick} data-active={active} {...props}>
       {children}
     </button>
   );
