@@ -2,11 +2,11 @@ import Navbar from "@/views/layout/Navbar";
 import Footer from "@/views/layout/Footer";
 import Sidebar from "@/views/layout/Sidebar";
 
-import useThemeEffect from "@/views/hooks/useThemeEffect";
+import useColorScheme from "@/views/hooks/useColorScheme";
 import type { FC, PropsWithChildren } from "react";
 
 const App: FC<PropsWithChildren> = ({ children }) => {
-  useThemeEffect();
+  useColorScheme();
   return (
     <div className="flex flex-col min-h-screen w-full h-full">
       <Navbar />
