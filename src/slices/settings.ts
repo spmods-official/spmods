@@ -11,10 +11,12 @@ import {
   LIGHT_COLOR_SCHEME_PREFERENCE,
 } from "@/types/settings";
 import type { ColorSchemePreference, ColorScheme } from "@/types/settings";
+import useMediaQuery from "@/views/hooks/useMediaQuery";
 
 const defaultSettingsState: SettingsState = {
   colorSchemePreference: SYSTEM_COLOR_SCHEME_PREFERENCE,
 };
+
 
 const settingsSlice = createSlice({
   name: "settings",
@@ -35,10 +37,11 @@ const settingsSlice = createSlice({
       state.colorSchemePreference,
     selectColorScheme: createSelector(
       (state: SettingsState) => state.colorSchemePreference,
-      (colorSchemePreference): ColorScheme | null => {
+      (colorSchemePreference): ColorScheme => {
         switch (colorSchemePreference) {
           case SYSTEM_COLOR_SCHEME_PREFERENCE:
-            return null;
+            const systemPrefersDark = useMediaQuery("(prefers-color-scheme: dark)");
+            return systemPrefersDark ? DARK_COLOR_SCHEME : LIGHT_COLOR_SCHEME;
           case LIGHT_COLOR_SCHEME_PREFERENCE:
             return LIGHT_COLOR_SCHEME;
           case DARK_COLOR_SCHEME_PREFERENCE:
