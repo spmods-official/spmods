@@ -7,7 +7,9 @@ import type { QueryObject } from "json2mq";
 import type { MediaQuery } from "@/types/mediaquery";
 
 export function getMedia(mediaQuery: MediaQuery): string {
-  return typeof mediaQuery === "string" ? mediaQuery : json2mq(mediaQuery as QueryObject);
+  return typeof mediaQuery === "string"
+    ? mediaQuery
+    : json2mq(mediaQuery as QueryObject);
 }
 
 export default function useMediaQuery(mediaQuery: MediaQuery): boolean {
@@ -18,21 +20,14 @@ export default function useMediaQuery(mediaQuery: MediaQuery): boolean {
       getCurrentValue: () => window.matchMedia(media).matches,
       subscribe(callback) {
         const mql = window.matchMedia(media);
-        if ("addEventListener" in mql) {
-          mql.addEventListener("change", callback);
-        } else {
-          (mql as any).addListener(callback);
-        }
+        mql.addEventListener("change", callback);
+
         return () => {
-          if ("removeEventListener" in mql) {
-            mql.removeEventListener("change", callback);
-          } else {
-            (mql as any).removeListener(callback);
-          }
+          mql.removeEventListener("change", callback);
         };
       },
     }),
-    [media]
+    [media],
   );
 
   return useSubscription(subscription);
