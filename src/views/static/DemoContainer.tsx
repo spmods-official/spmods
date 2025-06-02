@@ -1,62 +1,63 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState } from "@/app/configureStore";
 import type { Module } from "@/types/module";
 import { useParams } from "react-router";
+import { placeholderModules } from "@/mocks/modules";
+import { addComment } from "@/slices/comments";
 
-// placeholder mods until we have the actual ones
-const placeholderModules: Module[] = [
-  {
-    name: "Fundamentals of Programming",
-    code: "ST0502",
-    school: "School of Computing",
-    creditUnit: 6,
-    semester: 1,
-    description: "Introduction to programming concepts using JavaScript"
-  },
-  {
-    name: "Fundamentals of Computing",
-    code: "ST0503",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description: "Learning the basics of how computer works"
-  },
-  {
-    name: "Mathematics",
-    code: "ST0504",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description: "Mathematics for computing, involving matrices, linear algebra, etc"
-  }
-];
 
 export default function DemoContainer() {
   const { moduleCode } = useParams();
-  const module, setModule = useState<Module | null>(null);
+  const [module, setModule] = useState<Module | null>(null);
 
+  // future note: update this setEffect to fetch data from api
+  useEffect(() => {
+    const foundModule = placeholderModules.find(mod => mod.code === moduleCode);
 
+    setModule(foundModule || null);
+  })
+
+  // if module is not found, then just show the module not found message
+  if (!module) {
+    return <div className="container mx-auto text-gray-900 dark:text-white">
+      <h1 className="text-3xl font-bold">Module not found</h1>
+    </div>;
+  }
+
+  // get comments from redux store
+  // const comments = useSelector((state: RootState) => state.comments.list);
+  const comments = (state: RootState) => state.comments.list;
 
   return <div>
 
     <div className="container mx-auto text-gray-900 dark:text-white" >
 
-      <header className="text-3xl font-bold mb-4">
-        {module.}
+      <header className="text-3xl font-bold my-4">
+        {module.name}
       </header>
 
       <div className="text-xl font-semibold">
-        ST0502
+        {module.code}
       </div>
 
       <div className="text-sm">
-        School Of Computing • 6 CU • Year 1 Semester 2
+        {module.school} • {module.creditUnit.toString()} Credit Units • Year {Math.ceil(module.semester/2)} Semester {module.semester % 2 || 2}
       </div>
 
-      <div>
+      <div className="bg-indigo dark:bg-gray-800 rounded-lg p-5 border dark:border-gray-600 my-5">
+        <h2 className="text-lg font-semibold mb-4">Module description</h2>
         <p>
-          Lorem ipsum
+          {module.description}
         </p>
+      </div>
+
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-5 border dark:border-gray-600 my-5">
+        <h2 className="text-lg font-semibold mb-4">Module review and discussion</h2>
+        <div>
+          {/* loop through each comment, filter by the module selected*/}
+        </div>
       </div>
 
     </div>
