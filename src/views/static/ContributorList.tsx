@@ -1,42 +1,54 @@
-import { useEffect, useState } from "react";
-import { fetchContributors } from "@/apis/github";
+import { contributorResource } from "@/resources/contributorResource";
+import { Suspense } from "react";
 import type { Contributor } from "@/types/contributor";
+import ExternalLink from "../components/ExternalLink";
+import ResponsiveGrid from "../components/ResponsiveGrid";
 
-export default function ContributorList() {
-  const [contributors, setContributors] = useState<Contributor[] | null>(null);
+function ContributorListContent() {
+  const contributors = contributorResource.read();
 
-  useEffect(() => {
-    fetchContributors().then(setContributors);
-  }, []);
-
-  if (contributors === null) return <div>Loading contributors...</div>;
-  if (contributors.length === 0) return <div>Failed to load contributors.</div>;
+  if (contributors.length === 0) {
+    return <div className="text-content">Failed to load contributors.</div>;
+  }
 
   return (
-    <div className="p-5 text-gray-200">
-      <h2 className="text-2xl font-bold mb-6 ">Contributors</h2>
+    <div className="p-5 text-content">
+      <h2 className="text-3xl font-bold mb-6">Contributors</h2>
       <p className="mb-6">
         SPMods is a community-driven project. We would like to thank all the
         contributors who have helped us make this project possible.
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl">
-        {contributors.map((contributor) => (
+
+      <ResponsiveGrid base="two" md="three" lg="four" className="max-w-6xl">
+        {contributors.map((contributor: Contributor) => (
           <div
-            key={contributor.name}
-            className="flex flex-col items-center p-6"
+            key={contributor.login}
+            className="flex flex-col h-65 w-65 items-center p-6"
           >
             <img
-              src={contributor.avatar}
-              alt={contributor.name}
-              className="w-full h-full rounded-full mb-3"
+              src={contributor.avatar_url}
+              alt={contributor.login}
+              className="h-40 w-40 rounded-full mb-4"
             />
-            <h3 className="font-semibold flex items-center">
-              <span>{contributor.name}</span>
-            </h3>
-            <p className="text-gray-500">{contributor.commits} commits</p>
+            <ExternalLink href={contributor.html_url} intent="primary">
+              {contributor.login}
+            </ExternalLink>
+            <p className="text-content-muted">
+              {contributor.contributions} commits
+            </p>
           </div>
         ))}
-      </div>
+      </ResponsiveGrid>
     </div>
+  );
+}
+
+export default function ContributorList() {
+  return (
+    <Suspense
+      fallback={<div className="text-content">Loading contributors...</div>}
+    >
+      <ContributorListContent />
+    </Suspense>
   );
 }

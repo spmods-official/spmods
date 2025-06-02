@@ -1,10 +1,11 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
-export const externalLinkVariants = cva("text-content font-bold", {
+export const externalLinkVariants = cva("font-bold", {
   variants: {
     intent: {
-      default: "hover:text-accent",
+      default: "text-content hover:text-primary",
+      primary: "text-primary",
     },
   },
 });

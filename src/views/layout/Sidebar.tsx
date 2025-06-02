@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Home, Info, Settings, Users, Book } from "react-feather";
 
-// Modify this to add more routes
 const routes = [
   {
     path: "/",
@@ -31,12 +30,9 @@ const routes = [
 ];
 
 export default function Sidebar() {
-  // TODO: Enable switching between light and dark mode
-  // Use the useSelector(selectColorScheme) hook to get the current color scheme
-
   return (
     <aside
-      className={`min-w-[10vw] bg-background h-full py-6 text-gray-400 text-lg`}
+      className={`w-sidebar bg-background h-full py-6 text-content/70 text-lg`}
     >
       <nav>
         <ul className="flex flex-col space-y-2 pl-4">
@@ -46,7 +42,7 @@ export default function Sidebar() {
                 to={route.path}
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 transition-colors ${
-                    isActive ? "text-accent" : "hover:text-gray-200"
+                    isActive ? "text-primary" : "hover:text-content"
                   }`
                 }
               >
