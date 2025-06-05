@@ -2,7 +2,7 @@
 
 We welcome contributors from all backgrounds and skill levels. Whether you're a beginner or an experienced developer, your contributions can make a significant impact.
 
-To get started, visit our detailed [contributing guide](./CONTRIBUTING.MD) for step-by-step instructions tailored for first-time contributors.
+To get started, visit our detailed [contributing guide](./CONTRIBUTING.md) for step-by-step instructions tailored for first-time contributors.
 
 To run our website locally,
 
