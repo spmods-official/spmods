@@ -1,31 +1,42 @@
 # SPMods
 
-We welcome contributors from all backgrounds and skill levels. Whether you're a beginner or an experienced developer, your contributions can make a significant impact.
+SPMods is developed with [React](https://react.dev/), [Redux](https://redux.js.org/), [Tailwind](https://tailwindcss.com/) and [CVA](https://cva.style/docs)
 
-To get started, visit our detailed [contributing guide](./CONTRIBUTING.MD) for step-by-step instructions tailored for first-time contributors.
+## Getting Started
 
-To run our website locally,
+To get started with this project, make sure you have the following installed:
 
-1. Install all the dependencies with:
+- [Node.js (LTS version)](https://nodejs.org/en/)
+- [pnpm](https://pnpm.io/)
+
+Then install all the dependencies with:
 
 ```sh
 pnpm install
 ```
-
-2. Start the development server by running:
+To start the development server, simply run:
 
 ```sh
 pnpm dev
 ```
 
-3. The application should now be running at [http://localhost:5173].
+The application should now be running at [http://localhost:5173]
 
-
-## Code of Conduct
-
-We expect all contributors to follow Facebook's Code of Conduct, which we have adopted for this project. Please read [the text](https://code.facebook.com/codeofconduct) carefully to understand acceptable and unacceptable behaviours.
-
-
-## License
-
-By contributing to SPMods, you agree that your contributions will be licensed under its MIT license.
+## Project Structure
+    ├── public/                - Static assets
+    └── src/
+        ├── apis/              - Functions for interacting with external APIs
+        ├── app/               - Core application setup
+        ├── entry/             - Application entry point and root components
+        ├── resources/         - Suspense resources and related loaders
+        ├── slices/            - Redux slices
+        ├── styles/            - CSS Custom Properties
+        ├── types/             - Type definitions
+        ├── utils/             - Utility functions and classes
+        └── views/
+            ├── components/    - Reusable components
+            ├── hooks/         - React Hooks for managing state and side effects
+            ├── layout/        - Global layout components
+            ├── routes/        - Routing related components
+            ├── settings/      - Settings page component
+            └── static/        - Static pages that do not change frequently
