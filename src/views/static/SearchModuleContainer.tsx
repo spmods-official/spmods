@@ -2,8 +2,10 @@ import { Search } from "react-feather";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { placeholderModules } from "@/mocks/modules";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function SearchModuleContainer() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState({
     courses: [] as string[],
@@ -92,13 +94,13 @@ export default function SearchModuleContainer() {
 
         <div className="flex gap-6">
           {/* Module List */}
-          <div className="flex flex-col w-3/4 space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
+          <div className={`flex flex-col ${isMobile ? 'w-full' : 'w-3/4'} space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide`}>
             {filteredModules.map((module) => (
               <div key={module.code} className="flex flex-row p-4 rounded-lg border dark:border-gray-700 cursor-pointer
                     hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                 <div
                   onClick={() => navigate(`/module/${module.code}`)}
-                  className="flex flex-col gap-2 w-4/5"
+                  className={`flex flex-col gap-2 ${isMobile ? 'w-full' : 'w-4/5'}`}
                 >
                   <h3 className="font-bold text-lg">{module.code} {module.name}</h3>
                   <h4 className="text-gray-600 dark:text-gray-300 font-medium mb-2">
@@ -109,7 +111,7 @@ export default function SearchModuleContainer() {
                   </p>
                 </div>
 
-                <div className="flex flex-col w-1/5 pl-4 items-start justify-between text-sm">
+                <div className={`flex flex-col w-1/5 min-w-[20vw] pl-4 items-start justify-between text-sm ${isMobile ? 'hidden' : ''}`}>
                   <div className="">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
 
                   <div className="flex flex-col items-start">
@@ -151,7 +153,7 @@ export default function SearchModuleContainer() {
           </div>
 
           {/* Filters */}
-          <div className="w-1/4 p-4 border rounded-lg dark:border-gray-700 h-fit">
+          <div className={`w-1/4 p-4 border rounded-lg dark:border-gray-700 h-fit ${isMobile ? 'hidden' : ''}`}>
             <h3 className="font-bold text-lg mb-4">Filters</h3>
             
             {/* Course Filter */}
