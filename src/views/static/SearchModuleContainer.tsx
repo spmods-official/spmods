@@ -13,6 +13,16 @@ export default function SearchModuleContainer() {
   });
   const navigate = useNavigate();
 
+  // Get unique courses from data
+  const availableCourses = [...new Set(
+    placeholderModules.flatMap(module => module.course)
+  )].sort();
+
+  // Get unique schools from data
+  const availableSchools = [...new Set(
+    placeholderModules.map(module => module.school)
+  )].sort();
+
   const filteredModules = placeholderModules.filter((mod) => {
     const matchesSearch = mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          mod.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -145,39 +155,45 @@ export default function SearchModuleContainer() {
             <h3 className="font-bold text-lg mb-4">Filters</h3>
             
             {/* Course Filter */}
-            <div className="mb-4">
-              <h4 className="font-medium mb-2">Course</h4>
-              {["DAAA", "DIT", "DISM"].map(course => (
-                <label key={course} className="flex items-center mb-1">
-                  <input
-                    type="checkbox"
-                    checked={filters.courses.includes(course)}
-                    onChange={() => toggleFilter("courses", course)}
-                    className="mr-2"
-                  />
-                  {course}
-                </label>
-              ))}
+            <div className="mb-6">
+              <h4 className="font-medium mb-2 text-lg">Course</h4>
+              <div className="pl-4">
+                {availableCourses.map(course => (
+                  <label key={course} className="flex items-center mb-1 text-gray-400">
+                    <input
+                      type="checkbox"
+                      checked={filters.courses.includes(course)}
+                      onChange={() => toggleFilter("courses", course)}
+                      className="mr-2"
+                    />
+                    {course}
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* School Filter */}
-            <div className="mb-4">
-              <h4 className="font-medium mb-2">School</h4>
-              <label className="flex items-center mb-1">
-                <input
-                  type="checkbox"
-                  checked={filters.schools.includes("School of Computing")}
-                  onChange={() => toggleFilter("schools", "School of Computing")}
-                  className="mr-2"
-                />
-                School of Computing
-              </label>
+            <div className="mb-6">
+              <h4 className="font-medium mb-2 text-lg">School</h4>
+              <div className="pl-4">
+                {availableSchools.map(school => (
+                  <label key={school} className="flex items-center mb-1 text-gray-400">
+                    <input
+                      type="checkbox"
+                      checked={filters.schools.includes(school)}
+                      onChange={() => toggleFilter("schools", school)}
+                      className="mr-2"
+                    />
+                    {school}
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* Credit Units Filter */}
-            <div className="mb-4">
-              <h4 className="font-medium mb-2">Credit Units</h4>
-              <div className="flex gap-2 items-center">
+            <div className="mb-6">
+              <h4 className="font-medium mb-2 text-lg">Credit Units</h4>
+              <div className="flex gap-2 items-center pl-4 pt-1">
                 <input
                   type="number"
                   min="1"
@@ -186,7 +202,7 @@ export default function SearchModuleContainer() {
                   onChange={(e) => updateCreditRange('min', parseInt(e.target.value) || 1)}
                   className="w-16 p-1 rounded border dark:bg-gray-800 dark:border-gray-700 text-sm"
                 />
-                <span className="text-sm">to</span>
+                <span className="">to</span>
                 <input
                   type="number"
                   min="1"
@@ -200,23 +216,25 @@ export default function SearchModuleContainer() {
 
             {/* Elective Filter */}
             <div className="mb-4">
-              <h4 className="font-medium mb-2">Type</h4>
-              {[
-                { value: "all", label: "All" },
-                { value: "core", label: "Core" },
-                { value: "elective", label: "Elective" }
-              ].map(option => (
-                <label key={option.value} className="flex items-center mb-1">
-                  <input
-                    type="radio"
-                    name="elective"
-                    checked={filters.elective === option.value}
-                    onChange={() => toggleFilter("elective", option.value)}
-                    className="mr-2"
-                  />
-                  {option.label}
-                </label>
-              ))}
+              <h4 className="font-medium mb-2 text-lg">Type</h4>
+              <div className="pl-4">
+                {[
+                  { value: "all", label: "All" },
+                  { value: "core", label: "Core" },
+                  { value: "elective", label: "Elective" }
+                ].map(option => (
+                  <label key={option.value} className="flex items-center mb-1 text-gray-400">
+                    <input
+                      type="radio"
+                      name="elective"
+                      checked={filters.elective === option.value}
+                      onChange={() => toggleFilter("elective", option.value)}
+                      className="mr-2"
+                    />
+                    {option.label}
+                  </label>
+                ))}
+              </div>
             </div>
           </div>
         </div>
