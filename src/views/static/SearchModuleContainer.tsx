@@ -5,12 +5,46 @@ import { placeholderModules } from "@/mocks/modules";
 
 export default function SearchModuleContainer() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState({
+    courses: [] as string[],
+    schools: [] as string[],
+    credits: [] as number[],
+    elective: "all" as "all" | "core" | "elective"
+  });
   const navigate = useNavigate();
 
-  const filteredModules = placeholderModules.filter((mod) =>
-    mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    mod.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredModules = placeholderModules.filter((mod) => {
+    const matchesSearch = mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         mod.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCourse = filters.courses.length === 0 || 
+                         filters.courses.some(course => mod.course.includes(course));
+    
+    const matchesSchool = filters.schools.length === 0 || 
+                         filters.schools.includes(mod.school);
+    
+    const matchesCredits = filters.credits.length === 0 || 
+                          filters.credits.includes(mod.creditUnit);
+    
+    const matchesElective = filters.elective === "all" || 
+                           (filters.elective === "elective" && mod.elective) ||
+                           (filters.elective === "core" && !mod.elective);
+
+    return matchesSearch && matchesCourse && matchesSchool && matchesCredits && matchesElective;
+  });
+
+  const toggleFilter = (type: keyof typeof filters, value: any) => {
+    setFilters(prev => {
+      if (type === "elective") {
+        return { ...prev, [type]: value };
+      }
+      const currentArray = prev[type] as any[];
+      const newArray = currentArray.includes(value)
+        ? currentArray.filter(item => item !== value)
+        : [...currentArray, value];
+      return { ...prev, [type]: newArray };
+    });
+  };
 
   return (
     <div>
@@ -33,70 +67,137 @@ export default function SearchModuleContainer() {
           </div>
         </div>
 
-        <div className="flex flex-col w-2/3 space-y-4 mt-6 gap-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
-          {filteredModules.map((module) => (
-            <div className="flex flex-row p-4 rounded-lg border dark:border-gray-700 cursor-pointer
-                  hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-              <div
-                key={module.code}
-                onClick={() => navigate(`/module/${module.code}`)}
-                className="flex flex-col gap-2 w-4/5"
-              >
-                <h3 className="font-bold text-lg">{module.code} {module.name}</h3>
-                <h4 className="text-gray-600 dark:text-gray-300 font-medium mb-2">
-                {module.school} • {module.creditUnit} Credits
-                </h4>
-                <p className="text-gray-200 dark:text-gray-300">
-                  {module.description}
-                </p>
-              </div>
+        <div className="flex gap-6">
+          {/* Module List */}
+          <div className="flex flex-col w-2/3 space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
+            {filteredModules.map((module) => (
+              <div key={module.code} className="flex flex-row p-4 rounded-lg border dark:border-gray-700 cursor-pointer
+                    hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <div
+                  onClick={() => navigate(`/module/${module.code}`)}
+                  className="flex flex-col gap-2 w-4/5"
+                >
+                  <h3 className="font-bold text-lg">{module.code} {module.name}</h3>
+                  <h4 className="text-gray-600 dark:text-gray-300 font-medium mb-2">
+                  {module.school} • {module.creditUnit} Credits
+                  </h4>
+                  <p className="text-gray-200 dark:text-gray-300">
+                    {module.description}
+                  </p>
+                </div>
 
-              <div className="flex flex-col w-1/5 pl-4 items-start justify-between text-sm">
-                {/* Semester */}
-                <div className="">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
+                <div className="flex flex-col w-1/5 pl-4 items-start justify-between text-sm">
+                  <div className="">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
 
-                {/* Courses Offered */}
-                <div className="flex flex-col items-start">
-                  <span className="mb-2 text-gray-400">Offered By:</span>
-                  <div className="flex flex-row gap-1">
-                    {module.course.map((course) => (
-                      <span
-                        key={course}
-                        className={`px-2 py-1 rounded font-semibold text-xs text-white`}
-                        style={{
-                          backgroundColor:
-                            course === "DAAA"
-                              ? "#2563eb"
-                              : course === "DIT"
-                              ? "#059669"
-                              : "#b91c1c",
-                        }}
-                      >
-                        {course}
-                      </span>
+                  <div className="flex flex-col items-start">
+                    <span className="mb-2 text-gray-400">Offered By:</span>
+                    <div className="flex flex-row gap-1">
+                      {module.course.map((course) => (
+                        <span
+                          key={course}
+                          className={`px-2 py-1 rounded font-semibold text-xs text-white`}
+                          style={{
+                            backgroundColor:
+                              course === "DAAA" ? "#2563eb" : course === "DIT" ? "#059669" : "#b91c1c",
+                          }}
+                        >
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="text-gray-400 mt-2">Workload:</div>
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: Math.ceil(Math.ceil(Number(module.totalHours) / 15) / 6) }).map((_, rowIndex) => (
+                      <div key={rowIndex} className="flex flex-row gap-1">
+                        {Array.from({ length: Math.min(6, Math.ceil(Number(module.totalHours) / 15) - rowIndex * 6) }).map((_, i) => (
+                          <div
+                            key={rowIndex * 6 + i}
+                            className="w-4 h-4 bg-amber-800 rounded-sm"
+                            title={`${15 * (rowIndex * 6 + i + 1)} hours`}
+                          />
+                        ))}
+                      </div>
                     ))}
                   </div>
                 </div>
-
-                {/* Total Hours */}
-                <div className="text-gray-400 mt-2">Workload:</div>
-                <div className="flex flex-col gap-1">
-                  {Array.from({ length: Math.ceil(Math.ceil(Number(module.totalHours) / 15) / 6) }).map((_, rowIndex) => (
-                    <div key={rowIndex} className="flex flex-row gap-1">
-                      {Array.from({ length: Math.min(6, Math.ceil(Number(module.totalHours) / 15) - rowIndex * 6) }).map((_, i) => (
-                        <div
-                          key={rowIndex * 6 + i}
-                          className="w-4 h-4 bg-amber-800 rounded-sm"
-                          title={`${15 * (rowIndex * 6 + i + 1)} hours`}
-                        />
-                      ))}
-                    </div>
-                  ))}
-                </div>
               </div>
+            ))}
+            <div className="h-10"></div>
+          </div>
+
+          {/* Filters */}
+          <div className="w-1/3 p-4 border rounded-lg dark:border-gray-700 h-fit">
+            <h3 className="font-bold text-lg mb-4">Filters</h3>
+            
+            {/* Course Filter */}
+            <div className="mb-4">
+              <h4 className="font-medium mb-2">Course</h4>
+              {["DAAA", "DIT", "DISM"].map(course => (
+                <label key={course} className="flex items-center mb-1">
+                  <input
+                    type="checkbox"
+                    checked={filters.courses.includes(course)}
+                    onChange={() => toggleFilter("courses", course)}
+                    className="mr-2"
+                  />
+                  {course}
+                </label>
+              ))}
             </div>
-          ))}
-          <div className="h-10"></div>
+
+            {/* School Filter */}
+            <div className="mb-4">
+              <h4 className="font-medium mb-2">School</h4>
+              <label className="flex items-center mb-1">
+                <input
+                  type="checkbox"
+                  checked={filters.schools.includes("School of Computing")}
+                  onChange={() => toggleFilter("schools", "School of Computing")}
+                  className="mr-2"
+                />
+                School of Computing
+              </label>
+            </div>
+
+            {/* Credit Units Filter */}
+            <div className="mb-4">
+              <h4 className="font-medium mb-2">Credit Units</h4>
+              {[2, 3, 4, 5, 6].map(credit => (
+                <label key={credit} className="flex items-center mb-1">
+                  <input
+                    type="checkbox"
+                    checked={filters.credits.includes(credit)}
+                    onChange={() => toggleFilter("credits", credit)}
+                    className="mr-2"
+                  />
+                  {credit} Credits
+                </label>
+              ))}
+            </div>
+
+            {/* Elective Filter */}
+            <div className="mb-4">
+              <h4 className="font-medium mb-2">Type</h4>
+              {[
+                { value: "all", label: "All" },
+                { value: "core", label: "Core" },
+                { value: "elective", label: "Elective" }
+              ].map(option => (
+                <label key={option.value} className="flex items-center mb-1">
+                  <input
+                    type="radio"
+                    name="elective"
+                    checked={filters.elective === option.value}
+                    onChange={() => toggleFilter("elective", option.value)}
+                    className="mr-2"
+                  />
+                  {option.label}
+                </label>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
