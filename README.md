@@ -29,3 +29,7 @@ We expect all contributors to follow Facebook's Code of Conduct, which we have a
 ## License
 
 By contributing to SPMods, you agree that your contributions will be licensed under its MIT license.
+
+## Acknowledgments
+
+Design inspiration: This project’s current UI is inspired by NUSMods. We plan to evolve the design further with input from a dedicated UI/UX designer.
