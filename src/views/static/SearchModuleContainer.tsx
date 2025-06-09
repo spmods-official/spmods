@@ -81,8 +81,7 @@ export default function SearchModuleContainer() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search module code or name"
-              className="flex-1 p-4 rounded-lg border dark:bg-gray-800 
-                dark:border-gray-700"
+              className="flex-1 p-4 rounded-lg border border-border bg-background text-content-primary"
             />
           </div>
         </div>
@@ -91,26 +90,25 @@ export default function SearchModuleContainer() {
           {/* Module List */}
           <div className={`flex flex-col ${isMobile ? 'w-full' : 'w-3/4'} space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide`}>
             {filteredModules.map((module) => (
-              <div key={module.code} className="flex flex-row p-4 rounded-lg border dark:border-gray-700 cursor-pointer
-                    hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div key={module.code} className="flex flex-row p-4 rounded-lg border border-border cursor-pointer hover:bg-bg-hover transition-colors">
                 <div
                   onClick={() => navigate(`/module/${module.code}`)}
                   className={`flex flex-col gap-2 ${isMobile ? 'w-full' : 'w-4/5'}`}
                 >
-                  <h3 className="font-bold text-lg">{module.code} {module.name}</h3>
-                  <h4 className="text-gray-800 dark:text-gray-300 font-medium mb-2">
+                  <h3 className="font-bold text-lg text-content-primary">{module.code} {module.name}</h3>
+                  <h4 className="text-content-secondary font-medium mb-2">
                   {module.school} • {module.creditUnit} Credits
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-content-muted">
                     {module.description}
                   </p>
                 </div>
 
-                <div className={`flex flex-col w-1/5 min-w-[20vw] pl-4 items-start justify-between text-sm ${isMobile ? 'hidden' : ''}`}>
-                  <div className="">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
+                <div className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? 'hidden' : ''}`}>
+                  <div className="text-content-primary">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
 
                   <div className="flex flex-col items-start">
-                    <span className="mb-2 text-gray-600 dark:text-gray-400">Offered By:</span>
+                    <span className="mb-2 text-content-light">Offered By:</span>
                     <div className="flex flex-row gap-1">
                       {module.course.map((course) => (
                         <span
@@ -127,7 +125,7 @@ export default function SearchModuleContainer() {
                     </div>
                   </div>
 
-                  <div className="text-gray-600 dark:text-gray-400 mt-2">Workload:</div>
+                  <div className="text-content-light mt-2">Workload:</div>
                   <div className="flex flex-col gap-1">
                     {Array.from({ length: Math.ceil(Math.ceil(Number(module.totalHours) / 15) / 6) }).map((_, rowIndex) => (
                       <div key={rowIndex} className="flex flex-row gap-1">
@@ -148,15 +146,15 @@ export default function SearchModuleContainer() {
           </div>
 
           {/* Filters */}
-          <div className={`w-1/4 p-4 border rounded-lg dark:border-gray-700 h-fit ${isMobile ? 'hidden' : ''}`}>
-            <h3 className="font-bold text-lg mb-4">Filters</h3>
+          <div className={`w-1/4 p-4 border border-border rounded-lg h-fit ${isMobile ? 'hidden' : ''}`}>
+            <h3 className="font-bold text-lg mb-4 text-content-primary">Filters</h3>
             
             {/* Course Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg">Course</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">Course</h4>
               <div className="pl-4">
                 {availableCourses.map(course => (
-                  <label key={course} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
+                  <label key={course} className="flex items-center mb-1 text-content-muted">
                     <input
                       type="checkbox"
                       checked={filters.courses.includes(course)}
@@ -171,10 +169,10 @@ export default function SearchModuleContainer() {
 
             {/* School Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg">School</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">School</h4>
               <div className="pl-4">
                 {availableSchools.map(school => (
-                  <label key={school} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
+                  <label key={school} className="flex items-center mb-1 text-content-muted">
                     <input
                       type="checkbox"
                       checked={filters.schools.includes(school)}
@@ -189,7 +187,7 @@ export default function SearchModuleContainer() {
 
             {/* Credit Units Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg">Credit Units</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">Credit Units</h4>
               <div className="flex gap-2 items-center pl-4 pt-1">
                 <input
                   type="number"
@@ -197,30 +195,30 @@ export default function SearchModuleContainer() {
                   max="50"
                   value={filters.creditRange.min}
                   onChange={(e) => updateCreditRange('min', parseInt(e.target.value) || 1)}
-                  className="w-16 p-1 rounded border dark:bg-gray-800 dark:border-gray-700 text-sm"
+                  className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
                 />
-                <span className="">to</span>
+                <span className="text-content-muted">to</span>
                 <input
                   type="number"
                   min="1"
                   max="50"
                   value={filters.creditRange.max}
                   onChange={(e) => updateCreditRange('max', parseInt(e.target.value) || 50)}
-                  className="w-16 p-1 rounded border dark:bg-gray-800 dark:border-gray-700 text-sm"
+                  className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
                 />
               </div>
             </div>
 
             {/* Elective Filter */}
             <div className="mb-4">
-              <h4 className="font-medium mb-2 text-lg">Type</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">Type</h4>
               <div className="pl-4">
                 {[
                   { value: "all", label: "All" },
                   { value: "core", label: "Core" },
                   { value: "elective", label: "Elective" }
                 ].map(option => (
-                  <label key={option.value} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
+                  <label key={option.value} className="flex items-center mb-1 text-content-muted">
                     <input
                       type="radio"
                       name="elective"

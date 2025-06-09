@@ -10,6 +10,18 @@
 
     /* Typography Colors */
     --content: #69707a;
+    --content-primary: #1f2937;
+    --content-secondary: #374151;
+    --content-muted: #6b7280;
+    --content-light: #9ca3af;
+    
+    /* Border Colors */
+    --border: #e5e7eb;
+    --border-hover: #d1d5db;
+    
+    /* Background Variants */
+    --bg-hover: #f9fafb;
+    --bg-secondary: #f3f4f6;
   }
 
   .dark {
@@ -19,6 +31,18 @@
 
     /* Typography Colors */
     --content: #aaaaaa;
+    --content-primary: #ffffff;
+    --content-secondary: #d1d5db;
+    --content-muted: #9ca3af;
+    --content-light: #6b7280;
+    
+    /* Border Colors */
+    --border: #374151;
+    --border-hover: #4b5563;
+    
+    /* Background Variants */
+    --bg-hover: #374151;
+    --bg-secondary: #1f2937;
   }
 
   html,
@@ -35,6 +59,8 @@
   /* Background Colors */
   --color-background: var(--bg);
   --color-header: var(--header-bg);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-secondary: var(--bg-secondary);
 
   /* Primary Color Scale */
   --color-primary-50: #fff1f2;
@@ -54,11 +80,16 @@
   --color-primary-subtle: var(--color-primary-500)/50;
   --color-primary-faint: var(--color-primary-500)/30;
 
-  /* Typography Color Variants */
+  /* Typography Colors */
   --color-content: var(--content);
-  --color-content-muted: var(--content)/70;
-  --color-content-subtle: var(--content)/50;
-  --color-content-faint: var(--content)/30;
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+  --color-content-muted: var(--content-muted);
+  --color-content-light: var(--content-light);
+
+  /* Border Colors */
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
 
   /* Spacing */
   --spacing-sidebar: 15rem;
