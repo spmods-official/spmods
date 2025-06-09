@@ -1,4 +1,3 @@
-import { Search } from "react-feather";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { placeholderModules } from "@/mocks/modules";
