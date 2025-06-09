@@ -8,7 +8,7 @@ export default function SearchModuleContainer() {
   const [filters, setFilters] = useState({
     courses: [] as string[],
     schools: [] as string[],
-    credits: [] as number[],
+    creditRange: { min: 1, max: 50 },
     elective: "all" as "all" | "core" | "elective"
   });
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ export default function SearchModuleContainer() {
     const matchesSchool = filters.schools.length === 0 || 
                          filters.schools.includes(mod.school);
     
-    const matchesCredits = filters.credits.length === 0 || 
-                          filters.credits.includes(mod.creditUnit);
+    const matchesCredits = mod.creditUnit >= filters.creditRange.min && 
+                          mod.creditUnit <= filters.creditRange.max;
     
     const matchesElective = filters.elective === "all" || 
                            (filters.elective === "elective" && mod.elective) ||
@@ -38,12 +38,25 @@ export default function SearchModuleContainer() {
       if (type === "elective") {
         return { ...prev, [type]: value };
       }
+      if (type === "creditRange") {
+        return { ...prev, [type]: value };
+      }
       const currentArray = prev[type] as any[];
       const newArray = currentArray.includes(value)
         ? currentArray.filter(item => item !== value)
         : [...currentArray, value];
       return { ...prev, [type]: newArray };
     });
+  };
+
+  const updateCreditRange = (field: 'min' | 'max', value: number) => {
+    setFilters(prev => ({
+      ...prev,
+      creditRange: {
+        ...prev.creditRange,
+        [field]: value
+      }
+    }));
   };
 
   return (
@@ -69,7 +82,7 @@ export default function SearchModuleContainer() {
 
         <div className="flex gap-6">
           {/* Module List */}
-          <div className="flex flex-col w-2/3 space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
+          <div className="flex flex-col w-3/4 space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
             {filteredModules.map((module) => (
               <div key={module.code} className="flex flex-row p-4 rounded-lg border dark:border-gray-700 cursor-pointer
                     hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
@@ -128,7 +141,7 @@ export default function SearchModuleContainer() {
           </div>
 
           {/* Filters */}
-          <div className="w-1/3 p-4 border rounded-lg dark:border-gray-700 h-fit">
+          <div className="w-1/4 p-4 border rounded-lg dark:border-gray-700 h-fit">
             <h3 className="font-bold text-lg mb-4">Filters</h3>
             
             {/* Course Filter */}
@@ -164,17 +177,25 @@ export default function SearchModuleContainer() {
             {/* Credit Units Filter */}
             <div className="mb-4">
               <h4 className="font-medium mb-2">Credit Units</h4>
-              {[2, 3, 4, 5, 6].map(credit => (
-                <label key={credit} className="flex items-center mb-1">
-                  <input
-                    type="checkbox"
-                    checked={filters.credits.includes(credit)}
-                    onChange={() => toggleFilter("credits", credit)}
-                    className="mr-2"
-                  />
-                  {credit} Credits
-                </label>
-              ))}
+              <div className="flex gap-2 items-center">
+                <input
+                  type="number"
+                  min="1"
+                  max="50"
+                  value={filters.creditRange.min}
+                  onChange={(e) => updateCreditRange('min', parseInt(e.target.value) || 1)}
+                  className="w-16 p-1 rounded border dark:bg-gray-800 dark:border-gray-700 text-sm"
+                />
+                <span className="text-sm">to</span>
+                <input
+                  type="number"
+                  min="1"
+                  max="50"
+                  value={filters.creditRange.max}
+                  onChange={(e) => updateCreditRange('max', parseInt(e.target.value) || 50)}
+                  className="w-16 p-1 rounded border dark:bg-gray-800 dark:border-gray-700 text-sm"
+                />
+              </div>
             </div>
 
             {/* Elective Filter */}
