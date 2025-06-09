@@ -16,7 +16,10 @@ interface ButtonGroupProps
 
 interface ButtonGroupItemProps
   extends HTMLAttributes<HTMLButtonElement>,
-    ButtonGroupItemVariantsProps {}
+    ButtonGroupItemVariantsProps {
+  href?: string;
+  external?: boolean;
+}
 
 const ButtonGroup = ({
   children,
@@ -68,8 +71,24 @@ const ButtonGroupItem = ({
   children,
   active = false,
   onClick,
+  href,
+  external = false,
   ...props
 }: PropsWithChildren<ButtonGroupItemProps>) => {
+  if (href) {
+    return (
+      <a
+        href={href}
+        {...(external && {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })}
+        className={props.className}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
     <button onClick={onClick} data-active={active} {...props}>
       {children}
