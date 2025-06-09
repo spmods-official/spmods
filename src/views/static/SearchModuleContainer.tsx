@@ -74,12 +74,8 @@ export default function SearchModuleContainer() {
   return (
     <div>
       <div className="container mx-auto text-gray-900 dark:text-white">
-        <header className="text-4xl font-bold my-4 flex items-center">
-          <Search size={40} className="mr-4" />
-          <span>Module Finder</span>
-        </header>
 
-        <div className="my-4">
+        <div className="my-4 text-xl">
           <div className="flex gap-4">
             <input
               type="text"
