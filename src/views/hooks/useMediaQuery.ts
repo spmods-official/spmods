@@ -18,7 +18,7 @@ export default function useMediaQuery(mediaQuery: MediaQuery): boolean {
   const subscription = useMemo<Subscription<boolean>>(
     () => ({
       getCurrentValue: () => window.matchMedia(media).matches,
-      subscribe(callback) {
+      subscribe(callback: (event: MediaQueryListEvent) => void) {
         const mql = window.matchMedia(media);
         mql.addEventListener("change", callback);
 
