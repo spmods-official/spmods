@@ -13,11 +13,6 @@ const routes = [
     icon: Info,
   },
   {
-    path: "/module",
-    name: "Module",
-    icon: Book,
-  },
-  {
     path: "/settings",
     name: "Settings",
     icon: Settings,
