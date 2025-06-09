@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/app/configureStore";
@@ -42,7 +41,7 @@ export default function ModuleContainer() {
         addComment({
           author: "anon",
           text: textData,
-          moduleCode: moduleCode,
+          moduleCode: moduleCode!,
           timestamp: Date.now(),
         }),
       );
