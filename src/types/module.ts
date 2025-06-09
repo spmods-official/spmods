@@ -6,4 +6,7 @@ export type Module = {
   creditUnit: number;
   semester: number;
   description: string;
+  totalHours?: number;
+  elective?: boolean;
+  course: string[];
 };
