@@ -103,10 +103,10 @@ export default function SearchModuleContainer() {
                   className={`flex flex-col gap-2 ${isMobile ? 'w-full' : 'w-4/5'}`}
                 >
                   <h3 className="font-bold text-lg">{module.code} {module.name}</h3>
-                  <h4 className="text-gray-600 dark:text-gray-300 font-medium mb-2">
+                  <h4 className="text-gray-800 dark:text-gray-300 font-medium mb-2">
                   {module.school} • {module.creditUnit} Credits
                   </h4>
-                  <p className="text-gray-200 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300">
                     {module.description}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export default function SearchModuleContainer() {
                   <div className="">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
 
                   <div className="flex flex-col items-start">
-                    <span className="mb-2 text-gray-400">Offered By:</span>
+                    <span className="mb-2 text-gray-600 dark:text-gray-400">Offered By:</span>
                     <div className="flex flex-row gap-1">
                       {module.course.map((course) => (
                         <span
@@ -132,7 +132,7 @@ export default function SearchModuleContainer() {
                     </div>
                   </div>
 
-                  <div className="text-gray-400 mt-2">Workload:</div>
+                  <div className="text-gray-600 dark:text-gray-400 mt-2">Workload:</div>
                   <div className="flex flex-col gap-1">
                     {Array.from({ length: Math.ceil(Math.ceil(Number(module.totalHours) / 15) / 6) }).map((_, rowIndex) => (
                       <div key={rowIndex} className="flex flex-row gap-1">
@@ -161,7 +161,7 @@ export default function SearchModuleContainer() {
               <h4 className="font-medium mb-2 text-lg">Course</h4>
               <div className="pl-4">
                 {availableCourses.map(course => (
-                  <label key={course} className="flex items-center mb-1 text-gray-400">
+                  <label key={course} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
                     <input
                       type="checkbox"
                       checked={filters.courses.includes(course)}
@@ -179,7 +179,7 @@ export default function SearchModuleContainer() {
               <h4 className="font-medium mb-2 text-lg">School</h4>
               <div className="pl-4">
                 {availableSchools.map(school => (
-                  <label key={school} className="flex items-center mb-1 text-gray-400">
+                  <label key={school} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
                     <input
                       type="checkbox"
                       checked={filters.schools.includes(school)}
@@ -225,7 +225,7 @@ export default function SearchModuleContainer() {
                   { value: "core", label: "Core" },
                   { value: "elective", label: "Elective" }
                 ].map(option => (
-                  <label key={option.value} className="flex items-center mb-1 text-gray-400">
+                  <label key={option.value} className="flex items-center mb-1 text-gray-700 dark:text-gray-400">
                     <input
                       type="radio"
                       name="elective"
