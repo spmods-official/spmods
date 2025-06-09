@@ -33,7 +33,7 @@ export default function SearchModuleContainer() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4 mt-6 gap-4">
+        <div className="flex flex-col space-y-4 mt-6 gap-4 overflow-y-auto max-h-[70vh] scrollbar-hide">
           {filteredModules.map((module) => (
             <div
               key={module.code}
@@ -50,6 +50,7 @@ export default function SearchModuleContainer() {
               </p>
             </div>
           ))}
+          <div className="h-10"></div>
         </div>
       </div>
     </div>
