@@ -14,7 +14,7 @@ const App: FC<PropsWithChildren> = ({ children }) => {
     <div className="flex flex-col min-h-screen w-full h-full overflow-x-hidden">
       <Navbar />
 
-      <div className={`flex ${isMobile ? "flex-col" : "grow"}`}>
+      <div className={`flex grow ${isMobile ? "flex-col" : ""}`}>
         <div className="flex-shrink-0">
           {isMobile ? <MobileSidebar /> : <Sidebar />}
         </div>
