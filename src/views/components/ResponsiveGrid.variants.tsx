@@ -8,6 +8,7 @@ export const responsiveGridVariants = cva("grid gap-4", {
       two: "grid-cols-2",
     },
     md: {
+      two: "md:grid-cols-2",
       three: "md:grid-cols-3",
       four: "md:grid-cols-4",
     },
@@ -21,10 +22,10 @@ export const responsiveGridVariants = cva("grid gap-4", {
     },
   },
   defaultVariants: {
-    base: "two",
-    md: "three",
-    lg: "four",
-    xl: "four",
+    base: null,
+    md: null,
+    lg: null,
+    xl: null,
   },
 });
 
