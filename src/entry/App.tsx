@@ -8,22 +8,20 @@ import type { FC, PropsWithChildren } from "react";
 
 const App: FC<PropsWithChildren> = ({ children }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  
+
   useColorScheme();
   return (
     <div className="flex flex-col min-h-screen w-full h-full overflow-x-hidden">
       <Navbar />
-
+      
       <div className={`flex grow ${isMobile ? 'flex-col' : ''}`}>
         <div className="flex-shrink-0">
-          {isMobile ? (
-            <MobileSidebar />
-          ) : (
-            <Sidebar />
-          )}
+          {isMobile ? <MobileSidebar /> : <Sidebar />}
         </div>
 
-        <main className={`grow bg-background ${isMobile ? 'p-4' : ''}`}>{children}</main>
+        <main className={`grow bg-background ${isMobile ? "p-4" : ""}`}>
+          {children}
+        </main>
       </div>
 
       <Footer />

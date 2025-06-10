@@ -10,42 +10,52 @@ export default function SearchModuleContainer() {
     courses: [] as string[],
     schools: [] as string[],
     creditRange: { min: 1, max: 50 },
-    elective: "all" as "all" | "core" | "elective"
+    elective: "all" as "all" | "core" | "elective",
   });
   const navigate = useNavigate();
 
   // Get unique courses from data
-  const availableCourses = [...new Set(
-    placeholderModules.flatMap(module => module.course)
-  )].sort();
+  const availableCourses = [
+    ...new Set(placeholderModules.flatMap((module) => module.course)),
+  ].sort();
 
   // Get unique schools from data
-  const availableSchools = [...new Set(
-    placeholderModules.map(module => module.school)
-  )].sort();
+  const availableSchools = [
+    ...new Set(placeholderModules.map((module) => module.school)),
+  ].sort();
 
   const filteredModules = placeholderModules.filter((mod) => {
-    const matchesSearch = mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         mod.name.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesCourse = filters.courses.length === 0 || 
-                         filters.courses.some(course => mod.course.includes(course));
-    
-    const matchesSchool = filters.schools.length === 0 || 
-                         filters.schools.includes(mod.school);
-    
-    const matchesCredits = mod.creditUnit >= filters.creditRange.min && 
-                          mod.creditUnit <= filters.creditRange.max;
-    
-    const matchesElective = filters.elective === "all" || 
-                           (filters.elective === "elective" && mod.elective) ||
-                           (filters.elective === "core" && !mod.elective);
+    const matchesSearch =
+      mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      mod.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    return matchesSearch && matchesCourse && matchesSchool && matchesCredits && matchesElective;
+    const matchesCourse =
+      filters.courses.length === 0 ||
+      filters.courses.some((course) => mod.course.includes(course));
+
+    const matchesSchool =
+      filters.schools.length === 0 || filters.schools.includes(mod.school);
+
+    const matchesCredits =
+      mod.creditUnit >= filters.creditRange.min &&
+      mod.creditUnit <= filters.creditRange.max;
+
+    const matchesElective =
+      filters.elective === "all" ||
+      (filters.elective === "elective" && mod.elective) ||
+      (filters.elective === "core" && !mod.elective);
+
+    return (
+      matchesSearch &&
+      matchesCourse &&
+      matchesSchool &&
+      matchesCredits &&
+      matchesElective
+    );
   });
 
   const toggleFilter = (type: keyof typeof filters, value: any) => {
-    setFilters(prev => {
+    setFilters((prev) => {
       if (type === "elective") {
         return { ...prev, [type]: value };
       }
@@ -54,26 +64,25 @@ export default function SearchModuleContainer() {
       }
       const currentArray = prev[type] as any[];
       const newArray = currentArray.includes(value)
-        ? currentArray.filter(item => item !== value)
+        ? currentArray.filter((item) => item !== value)
         : [...currentArray, value];
       return { ...prev, [type]: newArray };
     });
   };
 
-  const updateCreditRange = (field: 'min' | 'max', value: number) => {
-    setFilters(prev => ({
+  const updateCreditRange = (field: "min" | "max", value: number) => {
+    setFilters((prev) => ({
       ...prev,
       creditRange: {
         ...prev.creditRange,
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
   return (
     <div>
       <div className="container mx-auto text-gray-900 dark:text-white">
-
         <div className="my-4 text-xl">
           <div className="flex gap-4">
             <input
@@ -88,24 +97,34 @@ export default function SearchModuleContainer() {
 
         <div className="flex gap-6">
           {/* Module List */}
-          <div className={`flex flex-col ${isMobile ? 'w-full' : 'w-3/4'} space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide`}>
+          <div
+            className={`flex flex-col ${isMobile ? "w-full" : "w-3/4"} space-y-4 overflow-y-auto max-h-[70vh] scrollbar-hide`}
+          >
             {filteredModules.map((module) => (
-              <div key={module.code} className="flex flex-row p-4 rounded-lg border border-border cursor-pointer hover:bg-bg-hover transition-colors">
+              <div
+                key={module.code}
+                className="flex flex-row p-4 rounded-lg border border-border cursor-pointer hover:bg-bg-hover transition-colors"
+              >
                 <div
                   onClick={() => navigate(`/module/${module.code}`)}
-                  className={`flex flex-col gap-2 ${isMobile ? 'w-full' : 'w-4/5'}`}
+                  className={`flex flex-col gap-2 ${isMobile ? "w-full" : "w-4/5"}`}
                 >
-                  <h3 className="font-bold text-lg text-content-primary">{module.code} {module.name}</h3>
+                  <h3 className="font-bold text-lg text-content-primary">
+                    {module.code} {module.name}
+                  </h3>
                   <h4 className="text-content-secondary font-medium mb-2">
-                  {module.school} • {module.creditUnit} Credits
+                    {module.school} • {module.creditUnit} Credits
                   </h4>
-                  <p className="text-content-muted">
-                    {module.description}
-                  </p>
+                  <p className="text-content-muted">{module.description}</p>
                 </div>
 
-                <div className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? 'hidden' : ''}`}>
-                  <div className="text-content-primary">Semester {module.semester} • {module.elective ? "Elective" : "Core"}</div>
+                <div
+                  className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? "hidden" : ""}`}
+                >
+                  <div className="text-content-primary">
+                    Semester {module.semester} •{" "}
+                    {module.elective ? "Elective" : "Core"}
+                  </div>
 
                   <div className="flex flex-col items-start">
                     <span className="mb-2 text-content-light">Offered By:</span>
@@ -116,7 +135,11 @@ export default function SearchModuleContainer() {
                           className={`px-2 py-1 rounded font-semibold text-xs text-white`}
                           style={{
                             backgroundColor:
-                              course === "DAAA" ? "#2563eb" : course === "DIT" ? "#059669" : "#b91c1c",
+                              course === "DAAA"
+                                ? "#2563eb"
+                                : course === "DIT"
+                                  ? "#059669"
+                                  : "#b91c1c",
                           }}
                         >
                           {course}
@@ -127,9 +150,19 @@ export default function SearchModuleContainer() {
 
                   <div className="text-content-light mt-2">Workload:</div>
                   <div className="flex flex-col gap-1">
-                    {Array.from({ length: Math.ceil(Math.ceil(Number(module.totalHours) / 15) / 6) }).map((_, rowIndex) => (
+                    {Array.from({
+                      length: Math.ceil(
+                        Math.ceil(Number(module.totalHours) / 15) / 6,
+                      ),
+                    }).map((_, rowIndex) => (
                       <div key={rowIndex} className="flex flex-row gap-1">
-                        {Array.from({ length: Math.min(6, Math.ceil(Number(module.totalHours) / 15) - rowIndex * 6) }).map((_, i) => (
+                        {Array.from({
+                          length: Math.min(
+                            6,
+                            Math.ceil(Number(module.totalHours) / 15) -
+                              rowIndex * 6,
+                          ),
+                        }).map((_, i) => (
                           <div
                             key={rowIndex * 6 + i}
                             className="w-4 h-4 bg-amber-800 rounded-sm"
@@ -146,15 +179,24 @@ export default function SearchModuleContainer() {
           </div>
 
           {/* Filters */}
-          <div className={`w-1/4 p-4 border border-border rounded-lg h-fit ${isMobile ? 'hidden' : ''}`}>
-            <h3 className="font-bold text-lg mb-4 text-content-primary">Filters</h3>
-            
+          <div
+            className={`w-1/4 p-4 border border-border rounded-lg h-fit ${isMobile ? "hidden" : ""}`}
+          >
+            <h3 className="font-bold text-lg mb-4 text-content-primary">
+              Filters
+            </h3>
+
             {/* Course Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">Course</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">
+                Course
+              </h4>
               <div className="pl-4">
-                {availableCourses.map(course => (
-                  <label key={course} className="flex items-center mb-1 text-content-muted">
+                {availableCourses.map((course) => (
+                  <label
+                    key={course}
+                    className="flex items-center mb-1 text-content-muted"
+                  >
                     <input
                       type="checkbox"
                       checked={filters.courses.includes(course)}
@@ -169,10 +211,15 @@ export default function SearchModuleContainer() {
 
             {/* School Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">School</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">
+                School
+              </h4>
               <div className="pl-4">
-                {availableSchools.map(school => (
-                  <label key={school} className="flex items-center mb-1 text-content-muted">
+                {availableSchools.map((school) => (
+                  <label
+                    key={school}
+                    className="flex items-center mb-1 text-content-muted"
+                  >
                     <input
                       type="checkbox"
                       checked={filters.schools.includes(school)}
@@ -187,14 +234,18 @@ export default function SearchModuleContainer() {
 
             {/* Credit Units Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">Credit Units</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">
+                Credit Units
+              </h4>
               <div className="flex gap-2 items-center pl-4 pt-1">
                 <input
                   type="number"
                   min="1"
                   max="50"
                   value={filters.creditRange.min}
-                  onChange={(e) => updateCreditRange('min', parseInt(e.target.value) || 1)}
+                  onChange={(e) =>
+                    updateCreditRange("min", parseInt(e.target.value) || 1)
+                  }
                   className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
                 />
                 <span className="text-content-muted">to</span>
@@ -203,7 +254,9 @@ export default function SearchModuleContainer() {
                   min="1"
                   max="50"
                   value={filters.creditRange.max}
-                  onChange={(e) => updateCreditRange('max', parseInt(e.target.value) || 50)}
+                  onChange={(e) =>
+                    updateCreditRange("max", parseInt(e.target.value) || 50)
+                  }
                   className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
                 />
               </div>
@@ -211,14 +264,19 @@ export default function SearchModuleContainer() {
 
             {/* Elective Filter */}
             <div className="mb-4">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">Type</h4>
+              <h4 className="font-medium mb-2 text-lg text-content-primary">
+                Type
+              </h4>
               <div className="pl-4">
                 {[
                   { value: "all", label: "All" },
                   { value: "core", label: "Core" },
-                  { value: "elective", label: "Elective" }
-                ].map(option => (
-                  <label key={option.value} className="flex items-center mb-1 text-content-muted">
+                  { value: "elective", label: "Elective" },
+                ].map((option) => (
+                  <label
+                    key={option.value}
+                    className="flex items-center mb-1 text-content-muted"
+                  >
                     <input
                       type="radio"
                       name="elective"
