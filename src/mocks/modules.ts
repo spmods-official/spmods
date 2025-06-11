@@ -2,711 +2,611 @@ import type { Module } from "@/types/module";
 
 export const placeholderModules: Module[] = [
   {
-    name: "AI & Machine Learning",
-    code: "ST0249",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "Provides students with the fundamental concepts in Artificial Intelligence (AI) and Machine Learning. The module aims to provide students with hands-on experience in building applications that use machine learning and neural networks. The students will also learn skills to build intelligent agents, such as Chatbots and integrate cognitive service APIs to add intelligence into their applications.",
-    totalHours: 60,
-    course: ["DAAA", "DISM"],
+    "name": "AI & Machine Learning",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "Provides students with the fundamental concepts in Artificial Intelligence (AI) and Machine Learning. The module aims to provide students with hands-on experience in building applications that use machine learning and neural networks. The students will also learn skills to build intelligent agents, such as Chatbots and integrate cognitive service APIs to add intelligence into their applications.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA",
+      "DCS"
+    ]
   },
   {
-    name: "Android Development",
-    code: "ST0511",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Aims to equip students with the skill in developing and deploying native Android application using Java as the native language. Students will develop an in-depth understanding of the basic components of an Android application, the lifecycle methods of Android application components, event handling, notification, messaging, basics of GUI, graphics and multimedia support.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Artificial Intelligence and its Impact",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 1,
+    "description": "Learn the broad overview of Artificial Intelligence (AI) and its societal and ethical impact on modern society. Build a simple AI model with a drag-and-drop tool and consider how the use of AI can address a chosen SDG.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Application Development Studio",
-    code: "ST0507",
-    school: "School of Computing",
-    creditUnit: 6,
-    semester: 1,
-    description:
-      "Aims to provide students with primary application development knowledge in integrating their previously learned skill sets ranging from Front-End Web Development, Back-End Web Development and Mobile Application to develop and manage a small enterprise application development project. Students are to create a minimally viable, multi-tier software application with consideration of good usability practices learnt from Design from User Interaction.",
-    elective: false,
-    totalHours: 90,
-    course: ["DIT"],
+    "name": "Back-End Web Development",
+    "school": "School of Computing",
+    "creditUnit": 6,
+    "year": 1,
+    "description": "Aim to equip students with the skill in developing database driven web application. Students will learn about server-side programming and be able to create-database-driven web applications using a scripting language and programming frameworks.",
+    "elective": false,
+    "totalHours": 90,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Applied AI and Analytics Project",
-    code: "ST1509",
-    school: "School of Computing",
-    creditUnit: 18,
-    elective: false,
-    semester: 1,
-    description:
-      "Provides students an opportunity to integrate the knowledge and technical skills they have acquired from the course, and experience the AI and Analytics workflow (Problem Framing /Data Exploration &amp; Preparation / Data Engineering / Feature Engineering / Analytics and Computational Modelling / Data Analysis / Data Visualization), problem solving, project management, communication and working in a team to implement an AI and Analytics project. The project can be based on any AI or Analytics application area, subject to the approval of the school.",
-    totalHours: 270,
-    course: ["DAAA"],
+    "name": "Collaboration in the Digital Age",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 1,
+    "description": "Find out what goes into a healthy and productive team where ideas, insights, and responsibilities are shared meaningfully. Sharpen your interpersonal and communication skills to collaborate effectively in a digital environment.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Applied Cryptography",
-    code: "ST2504",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Teaches students the principles and application of cryptography to secure data and network. Different encryption algorithms and techniques will be introduced, including conventional and public-key cryptography, authentication and digital signatures. Students will learn to apply these concepts to secure and authenticate electronic mails and messages. Key management, digital certificates and public-key infrastructure will be discussed to understand the deployment of public-key cryptography.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Data Fluency",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 1,
+    "description": "Develop data fluency skills such as formulating questions, processing and analysing data to articulate numerical and graphical summaries. Build a simple data dashboard to generate insights and support a solution for a chosen SDG.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Back-End Web Development",
-    code: "ST0503",
-    school: "School of Computing",
-    creditUnit: 6,
-    elective: false,
-    semester: 2,
-    description:
-      "Aim to equip students with the skill in developing database driven web application. Students will learn about server-side programming and be able to create-database-driven web applications using a scripting language and programming frameworks.",
-    totalHours: 90,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Education and Career Guidance",
+    "school": "School of Computing",
+    "creditUnit": 2,
+    "year": 1,
+    "description": "This module aims to help students discover their strengths, values and interests. It also supports students in making informed educational and career choices to achieve their career aspirations.",
+    "elective": false,
+    "totalHours": 30,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Business Intelligence",
-    code: "ST2312",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Aims to teach students how to collate, organize, analyse and present business data to decision makers so as to facilitate scientific and fact-based decision making. Students will be taught how to integrate the data from across the enterprise and produce reports and Business Intelligence dashboards including graphs, charts, grouped summary reports with drill down capability for analysis. Students will learn to master Business Intelligence software and reporting tools, to systematically collate data from multiple sources, analyse and visualize data, produce reports and present the findings to management. 60",
-    elective: true,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Effective Writing for the Workplace",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 1,
+    "description": "Acquire the skills needed to write in clear and concise English to effectively communicate an intended message to your target audience. Apply these skills when writing for specific contexts, such as scenarios related to the SDGs.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Communicating for Professional Effectiveness",
-    code: "LC0857",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to equip students with the knowledge and skills to identify jobs that match their interests, capabilities and qualifications to prepare resumes that are unique and customised for job requirements and hone interview skills to help them secure that job. Students will also understand and be able to apply self-awareness techniques including applying emotional intelligence principles in a professional setting to manage self and a team at the workplace.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Front-End Web Development",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "Aims to equip students with the knowledge and skills in developing effective front-end web applications using Hypertext Markup Language (HTML) and Cascading Stylesheets (CSS). Students will learn to use front-end web development frameworks to further enhance their ability for rapid prototyping responsive web application.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Communicating for Project (Proposal) Effectiveness",
-    code: "LC0855",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to equip students with the skills to articulate and communicate ideas persuasively and to work effectively in teams. They will be taught to pitch ideas or concepts and to write proposals to an intended audience.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Fundamentals of Computing",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "This module aims to provide students with an understanding of computer networking concepts and hands-on sessions on with operating systems using Command-Line Interfaces. Students will be taught on the use of various UNIX commands / system tools for user management, software installation, network administration and configuration of services. These topics are essential and prerequisite to an Application Developer for building and deployment of a software system.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DAAA",
+      "DCDF"
+    ]
   },
   {
-    name: "Computer Law and Investigation",
-    code: "ST2502",
-    school: "School of Computing",
-    creditUnit: 3,
-    semester: 1,
-    description:
-      "Examines the criminal trial process and cases involving computer hacking, denial of service, modification of data, distortion and fabrication of information. Students will examine the Computer Misuse and Cybersecurity Act, Evidence Act and the Criminal Procedure Code when dealing with the various cyber threats issues.",
-    elective: false,
-    totalHours: 45,
-    course: ["DISM"],
+    "name": "Fundamentals of Programming",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "Aims to help students pick up a programming language and learn how to solve and automate tasks through programming. Students will be taught programming fundamentals such as variables, data types, operators, control structures, methods and data structures such as arrays. At the end of the module, students will be competent in using programming for problem solving.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA",
+      "DCDF"
+    ]
   },
   {
-    name: "Critical and Analytical Thinking (CAT)",
-    code: "LC0860",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to equip students with skills in critical and analytical thinking, which includes the ability to evaluate different perspectives, articulate a point of view and support it with relevant and credible evidence. The module also provides students with opportunities to practise information literacy, and critical and analytical thinking through the exploration of contemporary local and global issues.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Mathematics",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "Equips students with knowledge in mathematics and analytical skills to solve problems related to infocomm technology. Topics include matrices, linear transformation, number systems, set theory, logic, Boolean algebra, techniques of counting and probability.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Data Engineering",
-    code: "ST1501",
-    school: "School of Computing",
-    creditUnit: 5,
-    elective: false,
-    semester: 1,
-    description:
-      "Covers the fundamental concepts to build and work with data pipelines. Students are taught how to work with traditional large datastores such as enterprise data warehouses and how to integrate data from multiple data sources into a single repository using Extract-Transform-Load (ETL) workflows via automated methods such as stored procedure triggers.",
-    totalHours: 75,
-    course: ["DAAA", "DIT"],
+    "name": "Problem Solving with Creative & Computational Thinking",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 1,
+    "description": "Appreciate the use of both creative and computational thinking skills to solve a SDG-related problem. Apply focused and diffuse thinking , brainstorming techniques, and the four pillars of computational thinking to a chosen SDG.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Data Structures & Algorithm (AI)",
-    code: "ST1507",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "Aims to teach students advanced Object-Oriented concepts and data structures and algorithms using Python. Through this module, students will learn how to implement stacks, queues, linked lists, dictionaries and solve problems using these data structures. Algorithms to improve code efficiency and search will also be taught.",
-    totalHours: 60,
-    course: ["DAAA"],
+    "name": "Programming for Data Analytics",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "Provides students with the fundamental skills to code applications to retrieve, manipulate, process and analyze data using the Python programming language. Students will learn to code in the Python Programming Language and key concepts such as exploratory data analysis and perform data analysis using Numpy, Pandas and Statsmodels on the data to gain useful insights for business decisions.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA",
+      "DCS"
+    ]
   },
   {
-    name: "Data Visualisation",
-    code: "ST1502",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 2,
-    description:
-      "Teaches students techniques to generate reports and dashboards that aid organisations to gain deeper insights into their business data. Students will learn best practices for creating effective data visualizations to support strategic data analysis and data-driven decisions using popular industry software such as Excel, Tableau and Power BI.",
-    totalHours: 60,
-    course: ["DAAA"],
+    "name": "Statistics for Data Science",
+    "school": "School of Computing",
+    "creditUnit": 3,
+    "year": 1,
+    "description": "Provides students with an introduction to elementary probability theory and statistical concepts and principles that lay the foundation to understand and learn the statistical procedures and methods. Topics include descriptive statistics, rules of probability, probability distributions of discrete and continuous random variables, sampling distributions, statistical estimation and hypothesis testing.",
+    "elective": false,
+    "totalHours": 45,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Deep Learning",
-    code: "ST1504",
-    school: "School of Computing",
-    creditUnit: 5,
-    elective: false,
-    semester: 1,
-    description:
-      "Teaches students neural network architectures and deep learning neural networks. Students will learn to frame problems and prepare machine trainable data sets. Students will apply deep learning frameworks such as Tensorflow and PyTorch to train deep learning models. They will also learn to deploy the trained models into applications.",
-    totalHours: 75,
-    course: ["DAAA"],
+    "name": "Thinking Critically about the UN SDGs",
+    "school": "School of Computing",
+    "creditUnit": 2,
+    "year": 1,
+    "description": "Develop critical and analytical thinking skills, along with the ability to present your point of view with credible and relevant evidence. Enhance your knowledge and appreciation of local and global issues covered in the 17 SDGs, with a focus on the former.",
+    "elective": false,
+    "totalHours": 30,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Design for User Interaction",
-    code: "ST0277",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 2,
-    description:
-      "Equips students with the knowledge in designing interactive interfaces for various platforms, such as web and mobile, to provide pleasant user experience. They will be equipped with skills to create interactive prototype using prototyping tools.",
-    elective: false,
-    totalHours: 75,
-    course: ["DIT"],
+    "name": "Agile MLOps",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 2,
+    "description": "This module provides students with an overview of Agile methodologies and Machine Learning Operations (MLOps) to enhance the efficiency and reliability of machine learning (ML) project development and delivery. It covers essential practices for planning ML project using the Agile framework, managing data and ML models, developing ML applications with continuous integration and deployment, and monitoring of ML models in the production environment. Students will learn Agile project management, MLOps and Container tools and gain hands-on experience in automating workflows to build robust machine learning projects.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "DevOps & Automation for AI",
-    code: "ST1505",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "Aims to provide students with DevOps knowledge in integrating their AI applications with docker and containerized cloud services such as kubernetes. Automating the AI workflow through Infrastructure-as-Code automation tools and services is essential for bringing AI code into production. Robotic Process Automation (RPA) is another software automation tool that enabled AI to be integrated with diverse data sources and service endpoints.",
-    totalHours: 60,
-    course: ["DAAA"],
+    "name": "Data Engineering",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 2,
+    "description": "The module covers the fundamental concepts to build and work with data pipelines. Students are taught how to work with relational database, non-relational (NoSQL) database, and large data stores such as data warehouses and how to integrate data from multiple data sources into a single repository using Extract, Transform and Load (ETL) workflows.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Digital Forensics and Investigation",
-    code: "ST2514",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Equips students with the fundamental concepts and techniques of computer and mobile forensics. Students will learn to acquire, analyse and present both computer and mobile data as evidence. This module will cover tools and techniques of computer and mobile forensics, data recovery, imaging and storage of electronic evidence.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Data Structures & Algorithm (AI)",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "Aims to teach students advanced Object-Oriented concepts and data structures and algorithms using Python. Through this module, students will learn how to implement stacks, queues, linked lists, dictionaries and solve problems using these data structures. Algorithms to improve code efficiency and search will also be taught.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Digital Visual Design",
-    code: "ST1002",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Aims to train the students on the use of image processing and painting tools for web and interactive applications design. Students will learn the techniques in digital imaging using Adobe Photoshop. Basic design principles like colour theory, typography layout and design elements will be covered in this module. Emphasis is positioned on structuring the students’ concept and helping them to develop their visual thinking. Basic photography skills will also be taught to help students to capture still images to use in their design.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Data Visualisation",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "This module aims to equip students with techniques for creating impactful reports and interactive dashboards, enabling organisations to extract deeper insights from their business data. Students will learn best practices for developing effective data visualisations using popular industry tools such as Tableau and Python. By the end of this module, students will be proficient in building and deploying comprehensive visual reporting solutions that drive informed business decisions.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Education and Career Guidance 1: Personal Development",
-    code: "SP108B",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to help you discover your strengths, values and interests. It also supports you in making informed educational and career choices to achieve your career aspirations.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Deep Learning",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 2,
+    "description": "This module teaches students deep neural network architectures and its practical applications. Students will learn to frame problems and prepare machine trainable datasets. They will apply deep learning frameworks such as Tensorflow, Keras, and PyTorch, to train deep learning models. Eventually, students will create and train their own deep learning models in various applications such as image recognition using convolutional neural networks, natural language processing using recurrent neural networks, creative deep learning using generative AI, as well as problem solving using reinforcement learning.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Education and Career Guidance 2: Career Development",
-    code: "SP208B",
-    school: "School of Computing",
-    creditUnit: 1,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to help you develop the skills, knowledge and attitudes needed for work effectiveness.",
-    totalHours: 15,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Digital Communication for Impact",
+    "school": "School of Computing",
+    "creditUnit": 1,
+    "year": 2,
+    "description": "Leverage digital communication to engage, inspire and impact stakeholders diligently. Learn about responsible Digital Citizenship and how you can create engaging and impactful messages through various digital platforms and tools.",
+    "elective": false,
+    "totalHours": 15,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Enterprise Systems Development",
-    code: "ST0505",
-    school: "School of Computing",
-    creditUnit: 6,
-    semester: 1,
-    description:
-      "Aims to equip students with the skills to architect and design modern, complex, scalable and mission critical Enterprise Systems. Students will develop an in-depth understanding of high-level concepts such as enterprise architecture and software architecture. They will be able to apply good software design patterns such as the model-view-controller architecture when designing their applications and understand the techniques to optimize and host their applications on the cloud. Students would also be taught on good practices of secure coding and be able to perform basic securing of their enterprise web application.",
-    elective: false,
-    totalHours: 90,
-    course: ["DIT"],
+    "name": "Mathematics for AI",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "The module equips students with key mathematical concepts in data mining, machine learning, data preparation, and model building. Students will delve into topics such as linear algebra, principal component analysis (PCA), differentiation, applications of derivatives and partial derivatives. Additionally, students will gain proficiency in numerical algorithms used to solve mathematical equations and programming skills to carry out higher-order differentiation.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Ethical Hacking and Defences",
-    code: "ST251Z",
-    school: "School of Computing",
-    creditUnit: 12,
-    semester: 1,
-    description:
-      "Provides students with a foundation on network protocols, network security, secure coding and penetration testing to protect computer resources. Students are taught offensive and defensive skills for the organisation’s wired and wireless networks in order to protect important assets against hackers.",
-    elective: false,
-    totalHours: 180,
-    course: ["DISM"],
+    "name": "Personal Branding and Career Agility",
+    "school": "School of Computing",
+    "creditUnit": 2,
+    "year": 2,
+    "description": "Get a head start in your career with the necessary skill sets, knowledge and tools to create your very own personal brand. Learn effective strategies to set yourself apart from the competition, and put it to good use and create awareness about the SDGs.",
+    "elective": false,
+    "totalHours": 30,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Front-End Web Development",
-    code: "ST0501",
-    school: "School of Computing",
-    creditUnit: 5,
-    elective: false,
-    semester: 1,
-    description:
-      "Aims to equip students with the knowledge and skills in developing effective front-end web applications using Hypertext Markup Language (HTML) and Cascading Stylesheets (CSS). Students will learn to use front-end web development frameworks to further enhance their ability for rapid prototyping responsive web application.",
-    totalHours: 75,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Persuasive Communication with Data Storytelling",
+    "school": "School of Computing",
+    "creditUnit": 2,
+    "year": 2,
+    "description": "Develop data visualisation skills and apply narrative elements and persuasive delivery techniques to communicate data effectively. Learn to craft compelling narratives, based on hard facts and data, to call stakeholders into taking action to tackle the SDGs.",
+    "elective": false,
+    "totalHours": 30,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Fundamentals of Computing",
-    code: "ST2413",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to provide students with an understanding of computer networking concepts and hands-on sessions on with operating systems using Command-Line Interfaces. Students will be taught on the use of various UNIX commands / system tools for user management, software installation, network administration and configuration of services. These topics are essential and prerequisite to an Application Developer for building and deployment of a software system.",
-    totalHours: 60,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Sustainable Innovation Project",
+    "school": "School of Computing",
+    "creditUnit": 3,
+    "year": 2,
+    "description": "Work in multi-disciplinary groups to apply design thinking methods, backed by research and qualitative data, to tackle local sustainable issues mapped to the SDGs. Tap into knowledge and skills learnt in CCC modules to create innovative prototypes for real-life issues faced by local communities.",
+    "elective": false,
+    "totalHours": 45,
+    "course": [
+      "DAAA",
+      "DCS",
+      "DCDF"
+    ]
   },
   {
-    name: "Fundamentals of Programming",
-    code: "ST0502",
-    school: "School of Computing",
-    creditUnit: 6,
-    elective: false,
-    semester: 1,
-    description:
-      "Aims to help students pick up a programming language and learn how to solve and automate tasks through programming. Students will be taught programming fundamentals such as variables, data types, operators, control structures, methods and data structures such as arrays. At the end of the module, students will be competent in using programming for problem solving.",
-    totalHours: 90,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Big Data Technologies",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "This module provides students with an understanding of what Big Data is, why it is needed and how Big Data pipelines are being implemented using Apache Spark. Apache Spark is a powerful platform that provides ways to store and utilize big data. Students will analyze data using Hadoop & Spark SQL and demonstrate how to create a streaming analytics application using Spark Streaming.",
+    "elective": true,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Immersive Simulation Development Techniques",
-    code: "ST0515",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 1,
-    description:
-      "This module equips students to add interactivity to immersive simulation applications. Students will learn computer graphics fundamentals and advanced programming techniques to interact with immersive simulation environment and devices.",
-    elective: true,
-    totalHours: 75,
-    course: ["DIT"],
+    "name": "Generative AI with Large Language Models",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "The module introduces students to Generative AI and Large Language Models (LLM). The module offers a deep dive into Transformer architecture, the backbone of LLM. Students will extend their knowledge beyond theory, gaining practical skills in fine-tuning LLMs and developing applications using LLM frameworks like LangChain, LlamaIndex, HayStack, RAGatouille and Embedchain. They will also master techniques such as prompt tuning and prompt engineering to refine LLM output, and interface LLMs and agents with their datasets to create AI applications.",
+    "elective": true,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Independent Study 1",
-    code: "ST2510",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Provide opportunities for students to study in-depth an area of interest related to their field of study. Students will demonstrate their knowledge, skills and competencies in the chosen field of study through various means such as case study reports, prototypes, presentations or participate in national level competitions.",
-    elective: true,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Graph Analytics for Data Science",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "This module aims to teach students the fundamental concepts of graph theory and knowledge graphs, equipping them with the skills to effectively design graph data models, write graph query language and build graph applications. Students will learn how to apply the algorithms such as pathfinding, community detection, centrality measures to solve real-world problems. Through hands-on exploration, students will gain a deep understanding of graph traversal algorithms and their practical applications, enabling them to extract valuable insights and meaning from complex graph structures.",
+    "elective": true,
+    "totalHours": 60,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Independent Study 2",
-    code: "ST2615",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Provides opportunities for students to study in-depth an area of interest related to their field of study. Students will demonstrate their knowledge, skills and competencies in the chosen field of study through various means such as case study reports, prototypes, presentations or participate in national level competitions.",
-    elective: true,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Internship Programme - DAAA (44 weeks)",
+    "school": "School of Computing",
+    "creditUnit": 44,
+    "year": 3,
+    "description": "Provides students with work exposure to an industrial environment, with opportunity to relate what is taught in the classroom to actual work situation. It creates a valuable learning opportunity for students to sharpen their skills and knowledge, as well as contributing to the development tasks of participating organisations.",
+    "elective": false,
+    "totalHours": 270,
+    "course": [
+      "DAAA"
+    ]
   },
   {
-    name: "Infocomm Professional Seminar",
-    code: "ST3003",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 1,
-    description:
-      "Provides students an opportunity to monitor and integrate emerging technology trends and developments, structured data gathering for the identification of new and emerging technological products, services and techniques. Students are to conduct research and identify opportunities for new and emerging technology to support businesses with consideration of the ethical principles and implications with IT law.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Computer Organisation",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "The module aims to provide students with an understanding of computer architecture and networking concepts and hands-on sessions on with operating systems using Command Line Interfaces. Students will be taught on the use of various UNIX commands / system tools for user management, software installation, network administration and configuration of services, client/server architecture and basic of cloud computing. These topics are essential and prerequisite to an Application Developer for building, deployment and operation of a software system.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Infocomm Security",
-    code: "ST1004",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Provides students with an understanding of Infocomm security concepts and issues. Students will be able to identify the risks, threats and the vulnerabilities of the Internet and learn how to defend against security breaches by identifying effective counter measures to be taken against identified vulnerabilities. Students will also learn about ethical and responsibility issues through case studies of security breaches.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Data Structures & Algorithms",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "This module introduces fundamental data structures and algorithms, linking each to a practical application in different subfields of computer science. Through this approach, students will learn essential concepts such as stacks, queues, linked lists, abstract data types, and hash tables while also gaining insight into areas like programming language design, networking, AI, and cybersecurity.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Infographics",
-    code: "ST2321",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Provides students with skills to translate data into visually compelling graphics to effectively simplify and present it in an engaging and informative way. It aims to develop a working knowledge of basic principles of design and visual communication. Students will learn about understanding data information hierarchy, planning and wire framing, illustration and iconography and using the right tools to translate it into an appropriate medium.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Design for User Interaction",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "Equips students with the knowledge in designing interactive interfaces for various platforms, such as web and mobile, to provide pleasant user experience. They will be equipped with skills to create interactive prototype using prototyping tools.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "InfoSec Project Development and Management",
-    code: "ST2601",
-    school: "School of Computing",
-    creditUnit: 11,
-    semester: 1,
-    description:
-      "Provides students with an opportunity to integrate knowledge and technical skills learnt from the DISM course. The students will do a project related to Information Security and in the process, learn problem solving, communication and teamwork. In the project, the students are to apply problem analysis, investigation, solution design and implementation skills. In addition, project management will also be taught.",
-    elective: false,
-    totalHours: 165,
-    course: ["DISM"],
+    "name": "Programming Methodology",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 1,
+    "description": "The module aims to teach students programming fundamentals and problem-solving concepts. The module helps students pick up their first programming language and learn how to solve and automate tasks through programming. Students will be taught programming fundamentals such as variables, data types, operators, control structures, functions, arrays and object literals. At the end of the module, students will be competent in using programming for problem solving.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Internet of Things",
-    code: "ST0324",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Provides a practical introduction to develop Internet of Things (IoT) applications. Students will learn what is IoT and its growing importance to support the emergence of autonomous systems. They are taught how to collect and process data from devices such as motion sensors or web cameras and utilise the information to create useful applications for business or community.",
-    elective: true,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Continuous Integration and Continuous Delivery",
+    "school": "School of Computing",
+    "creditUnit": 6,
+    "year": 2,
+    "description": "This module introduces concepts of Continuous Integration and Continuous Delivery (CI/CD), along with relevant libraries to implement them. Students will also learn libraries and frameworks to enhance applications and the developer's experience. Students will apply these concepts by the continual integration of changes with teammates to enhance an application, and the continuous delivery of those changes while ensuring operability of the application.",
+    "elective": false,
+    "totalHours": 90,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Internship Programme",
-    code: "IC3004",
-    school: "School of Computing",
-    creditUnit: 22,
-    elective: false,
-    semester: 1,
-    description:
-      "This module aims to provide students with work exposure to an industrial environment, with opportunity to relate what is taught in the classroom to actual work situation. It creates a valuable learning opportunity for students to sharpen their skills and knowledge, as well as contributing to the development tasks of participating organisations.",
-    totalHours: 270,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Database Systems",
+    "school": "School of Computing",
+    "creditUnit": 6,
+    "year": 2,
+    "description": "This module introduces the fundamental concepts of Relational Databases such as modelling and designing relational databases, writing SQL queries, and the use of indexes and keys. Students will apply these concepts by designing tables of a relational data store and building a stateful application to interact with it.",
+    "elective": false,
+    "totalHours": 90,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Introduction to Immersive Simulation",
-    code: "ST0513",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "This module equips students with an overview and history of immersive simulation applications. Student will learn about the fundamentals of Virtual Reality, Augmented Reality, Mixed Reality and their applications in different domains. Students will also learn about the tools & technology that develop immersive simulation applications.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Secure Coding",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "This module covers the concepts and fundamentals of secure coding principles, and techniques to prevent security vulnerabilities in web applications. Through a series of hacking and coding practical exercises, students will learn the implications of insecure code in applications and subsequently how to defend their web applications against potential hackers by coding securely.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "J2EE Application Development",
-    code: "ST0510",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Aims to equip students with knowledge in enterprise web application development, with the use of J2EE (Java 2 Platform, Enterprise Edition). Students will be able to develop a web application that applies the Model-View-Controller design pattern. RESTFUL web services with J2EE will also be covered. At the end of the module, students will have the opportunity to design and implement a web application that consumes web services with database access. Deployment of the web server to the cloud will also be covered.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Software Engineering Practice",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 2,
+    "description": "Aims to give students a practical experience of software development from implementation, testing to deployment of enterprise applications. Students will learn development techniques and gain in-depth knowledge of Information Systems architecture, technical documentation with the Unified Modelling Language and versioning control through an IT system. This module will apply Agile project development methodologies in managing software development. At the end of the module, students will develop a deep practical understanding of Software Engineering and appreciation of the documentation issues that impact system knowledge-transfers.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Java Programming",
-    code: "ST0509",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Aims to equip students with the fundamentals of problem solving with Java. A wide variety of programming problems will be introduced. The module covers Object-Oriented concepts and teaches students problem solving in an object oriented approach. Essential application development topics such as UI programming and database programming are also included. Upon the completion of the module, students will be better equipped with problem solving techniques to design and develop robust applications with Java.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
+    "name": "Internship Programme - DCS (44 weeks)",
+    "school": "School of Computing",
+    "creditUnit": 44,
+    "year": 3,
+    "description": "Students will intern at selected local or overseas organizations to further sharpen their IT skills and knowledge, through working on real-life projects in the areas of their study. Students contribute to the organizations by applying what they have learnt, while also learning and gaining experience from a real-life working environment.",
+    "elective": false,
+    "totalHours": 270,
+    "course": [
+      "DCS"
+    ]
   },
   {
-    name: "Linux Administration and Security",
-    code: "ST2412",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Teaches students on the use of various Linux commands / system tools for user management, security administration, software installation, network administration and configuration of services. Students will also learn how to secure the Linux operating system.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Digital Forensics and Investigation",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "Equips students with the fundamental concepts and techniques of computer and mobile forensics. Students will learn to acquire, analyse and present both computer and mobile data as evidence. This module will cover tools and techniques of computer and mobile forensics, data recovery, imaging and storage of electronic evidence.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Malware Reverse Engineering",
-    code: "ST2617",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Equips students with the basic knowledge of malware analysis to reverse-engineer the malware using practical tools and techniques. The three phases of behavioral, code and memory analysis of malware will be taught. Students will learn how to explore and understand the key characteristics of malware and the techniques of reverse-engineering compiled Windows executables and browser-based malware.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Ethical Hacking Essentials",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "This module introduces students to tools to discover and exploit vulnerabilities in networks and operating systems. They will be taught the security issues found in software, especially web applications and security components like firewalls and IDS (Intrusion Detection Systems) will also be introduced as countermeasures to defend against cyber-attacks.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Mathematics",
-    code: "MS0105",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "Equips students with knowledge in mathematics and analytical skills to solve problems related to infocomm technology. Topics include matrices, linear transformation, number systems, set theory, logic, Boolean algebra, techniques of counting and probability.",
-    totalHours: 60,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Infocomm Security and Network Fundamentals",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "This module introduces students to the fundamental concepts of infocomm security such as identification, authentication, authorisation, integrity and confidentiality. Students will also learn basic network devices, functions, standards, and protocols and will acquire basic networking skills like designing and setting up a local area network.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Mathematics for AI",
-    code: "MS0240",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "Equips students with key mathematical concepts in data mining, machine learning, data preparation and model building. Students will learn linear algebra, singular value decomposition (SVD), and principal component analysis (PCA). Students learn the numerical algorithms to solve mathematical equations. This module also provides students with knowledge of how linear algebra is applied to neural networks.",
-    totalHours: 60,
-    course: ["DAAA"],
+    "name": "Linux Administration and Security",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 1,
+    "description": "Teaches students on the use of various Linux commands / system tools for user management, security administration, software installation, network administration and configuration of services. Students will also learn how to secure the Linux operating system.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Mobile Application Development",
-    code: "ST0504",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 2,
-    description:
-      "Aims to imparts general domain knowledge in the area of mobile networks and applications development. The architecture of the mobile network, the operating systems used in different mobile devices as well as the software tools used for mobile applications development will be taught. Students will also understand how deployment and bringing the application to market are done. On completion of the module, students will also be able to program, among others; user interfaces, persistence storage, 2D graphics and location-aware cross platform mobile applications.",
-    elective: false,
-    totalHours: 75,
-    course: ["DIT"],
+    "name": "Applied Cryptography",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "Teaches students the principles and application of cryptography to secure data and network. Different encryption algorithms and techniques will be introduced, including conventional and public-key cryptography, authentication and digital signatures. Students will learn to apply these concepts to secure and authenticate electronic mails and messages. Key management, digital certificates and public-key infrastructure will be discussed to understand the deployment of public-key cryptography.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Mobile Applications",
-    code: "ST2513",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Imparts general domain knowledge in the area of mobile networks and applications development. The architecture of the mobile network, the operating systems used in different mobile devices as well as the software tools used for mobile applications development will be taught. Students will also understand how deployment and bringing the application to market are done. On completion of the module, students will also be able to program, among others; user interfaces, persistence storage, 2D graphics and location-aware applications using Android as an example platform.",
-    elective: true,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Data Protection for Cyber Security",
+    "school": "School of Computing",
+    "creditUnit": 3,
+    "year": 2,
+    "description": "The module will examine the data life cycle processes and cases involving computer hacking, denial of service, modification of data, distortion and fabrication of information. Students will examine the Personal Data Protection Act (PDPA), Data Protection Practices for Information Communication Technology (ICT) Systems, Confidential Computing and Computer Misuse and Cybersecurity Act (CMCA) when dealing with the various cyber threats issues and data protection practices.",
+    "elective": false,
+    "totalHours": 45,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Narrative Thinking (NAT)",
-    code: "LC0861",
-    school: "School of Computing",
-    creditUnit: 2,
-    elective: false,
-    semester: 2,
-    description:
-      "This module aims to equip students with the skills to critically evaluate the elements of narratives used in a variety of contexts, and to appreciate and harness the power of storytelling in our daily life. Students will analyse narratives to connect and contextualise self to society, and learn to craft impactful personal narratives to inspire or influence others.",
-    totalHours: 30,
-    course: ["DAAA", "DIT", "DISM"],
+    "name": "Malware Reverse Engineering",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "Equips students with the basic knowledge of malware analysis to reverse-engineer the malware using practical tools and techniques. The three phases of behavioral, code and memory analysis of malware will be taught. Students will learn how to explore and understand the key characteristics of malware and the techniques of reverse-engineering compiled Windows executables and browser-based malware.",
+    "elective": false,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Network Fundamentals",
-    code: "ST1010",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Equips students with the fundamental concepts and skills in data networking, both wired and wireless. Students will learn basic network devices, functions, standards, and protocols and will acquire basic networking skills like designing and setting up a local area network.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
+    "name": "Securing Microsoft Windows",
+    "school": "School of Computing",
+    "creditUnit": 5,
+    "year": 2,
+    "description": "Aims at equipping the students with hands-on knowledge in securing and hardening a Windows operating system. The course will cover the security mechanism used in the operating system, configuring different levels of security measures, best practices and security related tools and utilities.",
+    "elective": false,
+    "totalHours": 75,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Practical AI",
-    code: "ST1508",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 1,
-    description:
-      "This module teaches students practical AI skills such as data preparation and feature engineering using cloud platforms for a variety of domains. This module equips students with skills to apply AI to vertical industry domains such as digital marketing, cybersecurity, Fintech and advanced manufacturing. It introduces students to the processes using data from social media platforms. They will also learn to perform in-depth analysis on the data to improve digital marketing.",
-    totalHours: 60,
-    course: ["DAAA"],
+    "name": "Industrial Control Systems Cyber Range Essentials",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "This module aims to teach tools to discover and exploit vulnerabilities in simulated and ICS Cyber Range Environment. It will also cover security issues and weaknesses of ICS protocols, different attack surfaces and types of exploits targeted at PLCS. Students will learn what the best practices for securing ICS are, how to deploy countermeasures to defend against cyber-attacks. Student will work in groups to protect and defend against simulated cyber attacks using tools, techniques learned in this module.",
+    "elective": true,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
   },
   {
-    name: "Programming for Data Analytics",
-    code: "ST1510",
-    school: "School of Computing",
-    creditUnit: 5,
-    elective: false,
-    semester: 2,
-    description:
-      "Provides students with the fundamental skills to code applications to retrieve, manipulate, process and analyze data using the Python programming language. Students will learn to code in the Python Programming Language and key concepts such as exploratory data analysis and perform data analysis using Numpy, Pandas and Statsmodels on the data to gain useful insights for business decisions.",
-    totalHours: 75,
-    course: ["DAAA"],
-  },
-  {
-    name: "Programming in Security",
-    code: "ST2414",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "Introduces students to a common programming language and the libraries to code simple security applications. The basic programming techniques and constructs in this programming language will be explained, including regular expressions, functions, data structures (eg lists, tuples and dictionaries), classes and use of security modules like nmap. This module strives to build up the foundation in programming for cyber security and develop students towards problem solving and coding practical IT security applications.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
-  },
-  {
-    name: "Secure Coding",
-    code: "ST2515",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "This module covers the concepts and fundamentals of secure coding principles, and techniques to prevent security vulnerabilities in web applications. Through a series of hacking and coding practical exercises, students will learn the implications of insecure code in applications and subsequently how to defend their web applications against potential hackers by coding securely.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
-  },
-  {
-    name: "Securing Microsoft Windows",
-    code: "ST2612",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 1,
-    description:
-      "Aims at equipping the students with hands-on knowledge in securing and hardening a Windows operating system. The course will cover the security mechanism used in the operating system, configuring different levels of security measures, best practices and security related tools and utilities.",
-    elective: false,
-    totalHours: 75,
-    course: ["DISM"],
-  },
-  {
-    name: "Security Policy and Incident Management",
-    code: "ST2610",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "This module equips students with the fundamental concepts and techniques of security policy and incident management. Students will learn the essentials of security policy development, risk assessments and security models. Students will also learn to monitor security events, perform network forensics analysis and proactive detection of attacks, and be introduced to security incident response.",
-    elective: false,
-    totalHours: 60,
-    course: ["DISM"],
-  },
-  {
-    name: "Simulation Scenes & Objects",
-    code: "ST0514",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 1,
-    description:
-      "This module equips students on basic asset creation for immersive simulated environment. Students will learn to create User Interface, 3D content, add animation and audio, and other media for immersive simulation applications. Students will also learn how to use Level of Detail to optimise and enhance frame rate for on immersive devices.",
-    elective: true,
-    totalHours: 75,
-    course: ["DIT"],
-  },
-  {
-    name: "Social Innovation Project",
-    code: "LC8062",
-    school: "School of Computing",
-    creditUnit: 3,
-    semester: 1,
-    description:
-      "This module aims to equip students with a Design Thinking mindset in a social innovation context. Students collaborate in multi-disciplinary groups to apply Design Thinking tools and methods to create innovative prototype solutions for local social issues. In the process, they will develop a better understanding of themselves, and empathy for a local community in need.",
-    elective: false,
-    totalHours: 45,
-    course: ["DIT", "DISM"],
-  },
-  {
-    name: "Software Application Project",
-    code: "ST0508",
-    school: "School of Computing",
-    creditUnit: 18,
-    semester: 1,
-    description:
-      "This module provides students an opportunity to integrate knowledge and technical skills they have acquired from the course and experience problem solving, project management, communication and working as a team to develop IT applications. The project can be based on any IT application area, subject to the approval of the school, and can be implemented using any software and hardware platform available in the school.",
-    elective: false,
-    totalHours: 270,
-    course: ["DIT"],
-  },
-  {
-    name: "Software Engineering Practice",
-    code: "ST0506",
-    school: "School of Computing",
-    creditUnit: 5,
-    semester: 1,
-    description:
-      "Aims to give students a practical experience of software development from implementation, testing to deployment of enterprise applications. Students will learn development techniques and gain in-depth knowledge of Information Systems architecture, technical documentation with the Unified Modelling Language and versioning control through an IT system. This module will apply Agile project development methodologies in managing software development. At the end of the module, students will develop a deep practical understanding of Software Engineering and appreciation of the documentation issues that impact system knowledge-transfers.",
-    elective: false,
-    totalHours: 75,
-    course: ["DIT"],
-  },
-  {
-    name: "Statistics for Data Science",
-    code: "MS0140",
-    school: "School of Computing",
-    creditUnit: 4,
-    elective: false,
-    semester: 2,
-    description:
-      "Provides students with an introduction to elementary probability theory and statistical concepts and principles that lay the foundation to understand and learn the statistical procedures and methods. Topics include descriptive statistics, rules of probability, probability distributions of discrete and continuous random variables, sampling distributions, statistical estimation and hypothesis testing.",
-    totalHours: 60,
-    course: ["DAAA"],
-  },
-  {
-    name: "Sustainable Innovation Project (SIP)",
-    code: "CC1S10",
-    school: "School of Computing",
-    creditUnit: 3,
-    elective: false,
-    semester: 1,
-    description:
-      "This module, tapping on what students have learnt in the Common Core Curriculum, aims to equip students with a Design Thinking mindset to create an innovative solution to tackle local social issues mapped to the UN SDGs. Students collaborate in multi-disciplinary groups to apply design thinking method and tools backed by research and qualitative data, to create sustainable and innovative prototype solutions for real-life issues faced by a local community in need. In the process, they develop a better understanding of themselves, and empathy for a local community in need.",
-    totalHours: 45,
-    course: ["DAAA"],
-  },
-  {
-    name: "User Interface Design",
-    code: "ST0293",
-    school: "School of Computing",
-    creditUnit: 4,
-    semester: 1,
-    description:
-      "This module allows students to create interactive applications with graphical interface that will illuminate the interaction between users and its contents. Subjects like colour theories, screen typography, visual thinking processes, and interface design principles will be taught in this module.",
-    elective: true,
-    totalHours: 60,
-    course: ["DIT"],
-  },
+    "name": "Offensive Security",
+    "school": "School of Computing",
+    "creditUnit": 4,
+    "year": 2,
+    "description": "Students are taught offensive skills for the organisation's wired and wireless networks in order to protect important assets against hackers. Students will have the opportunity to integrate the knowledge and technical skills learned by taking part in scenario based exercises, as well as learning the mindset required to be a successful penetration tester.",
+    "elective": true,
+    "totalHours": 60,
+    "course": [
+      "DCDF"
+    ]
+  }
 ];
