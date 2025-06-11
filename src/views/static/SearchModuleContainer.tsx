@@ -26,7 +26,6 @@ export default function SearchModuleContainer() {
 
   const filteredModules = placeholderModules.filter((mod) => {
     const matchesSearch =
-      mod.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
       mod.name.toLowerCase().includes(searchQuery.toLowerCase());
 
     const matchesCourse =
@@ -102,15 +101,15 @@ export default function SearchModuleContainer() {
           >
             {filteredModules.map((module) => (
               <div
-                key={module.code}
+                key={module.name}
                 className="flex flex-row p-4 rounded-lg border border-border cursor-pointer hover:bg-bg-hover transition-colors"
               >
                 <div
-                  onClick={() => navigate(`/module/${module.code}`)}
+                  onClick={() => navigate(`/module/${module.name}`)}
                   className={`flex flex-col gap-2 ${isMobile ? "w-full" : "w-4/5"}`}
                 >
                   <h3 className="font-bold text-lg text-content-primary">
-                    {module.code} {module.name}
+                    {module.name}
                   </h3>
                   <h4 className="text-content-secondary font-medium mb-2">
                     {module.school} • {module.creditUnit} Credits
@@ -122,7 +121,7 @@ export default function SearchModuleContainer() {
                   className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? "hidden" : ""}`}
                 >
                   <div className="text-content-primary">
-                    Semester {module.semester} •{" "}
+                    Year {module.year} •{" "}
                     {module.elective ? "Elective" : "Core"}
                   </div>
 
