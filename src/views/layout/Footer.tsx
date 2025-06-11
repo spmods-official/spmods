@@ -51,9 +51,12 @@ const Footer: FC = () => {
             </Link>
           </li>
         </ul>
-        
-        <div className={`mt-4 text-content-muted text-sm ${isMobile ? "text-center" : ""}`}>
-          This project is not affiliated with Singapore Polytechnic.
+
+        <div
+          className={`mt-4 text-content-muted text-sm ${isMobile ? "text-center w-[85%] mx-auto" : ""}`}
+        >
+          SPMods is an independent initiative that is not officially affiliated
+          with Singapore Polytechnic.
         </div>
       </div>
     </footer>

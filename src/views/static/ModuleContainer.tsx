@@ -5,8 +5,11 @@ import { placeholderModules } from "@/mocks/modules";
 import Remark42 from "../components/Remark42";
 import useColorScheme from "../hooks/useColorScheme";
 import { DARK_COLOR_SCHEME } from "@/types/settings";
+import { slugify } from "@/utils/slugify";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function ModuleContainer() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const { moduleName } = useParams();
   const [module, setModule] = useState<Module | null>(null);
 
@@ -20,7 +23,7 @@ export default function ModuleContainer() {
   useEffect(() => {
     console.log(moduleName);
     const foundModule = placeholderModules.find(
-      (mod) => mod.name === moduleName,
+      (mod) => slugify(mod.name) === moduleName,
     );
 
     if (!foundModule) {
@@ -39,15 +42,14 @@ export default function ModuleContainer() {
     );
   }
   return (
-    <div className="w-4/5 h-full">
+    <div className={`${isMobile ? "w-full" : "w-4/5"} h-full`}>
       <div className="text-content h-full flex flex-col">
         <div className="flex flex-col gap-y-1 py-4">
           <header className="text-primary font-semibold text-4xl">
-            {module.code}
+            {module.name}
           </header>
-          <div className="text-3xl font-bold">{module.name}</div>
 
-          <div className="text">
+          <div className="text-xl">
             {module.school} • {module.creditUnit.toString()} Credit Units
           </div>
         </div>
