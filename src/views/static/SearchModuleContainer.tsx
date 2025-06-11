@@ -15,6 +15,12 @@ export default function SearchModuleContainer() {
   });
   const navigate = useNavigate();
 
+  const options: { value: "all" | "core" | "elective"; label: string }[] = [
+    { value: "all", label: "All" },
+    { value: "core", label: "Core" },
+    { value: "elective", label: "Elective" },
+  ];
+
   // Get unique courses from data
   const availableCourses = [
     ...new Set(placeholderModules.flatMap((module) => module.course)),
@@ -275,11 +281,7 @@ export default function SearchModuleContainer() {
                 Type
               </h4>
               <div className="pl-4">
-                {[
-                  { value: "all", label: "All" },
-                  { value: "core", label: "Core" },
-                  { value: "elective", label: "Elective" },
-                ].map((option) => (
+                {options.map((option) => (
                   <label
                     key={option.value}
                     className="flex items-center mb-1 text-content-muted"

@@ -33,3 +33,7 @@ By contributing to SPMods, you agree that your contributions will be licensed un
 ## Acknowledgments
 
 Design inspiration: This project’s current UI is inspired by NUSMods. We plan to evolve the design further with input from a dedicated UI/UX designer.
+
+## Disclaimer
+
+We are not associated with Singapore Polytechnic. This is a student-led initiative.
