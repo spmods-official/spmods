@@ -11,7 +11,7 @@ const PageRoutes: React.FC = () => (
   <Routes>
     <Route path="/" Component={SearchModuleContainer} />
     <Route path="/about" Component={AboutContainer} />
-    <Route path="/module/:moduleCode" Component={ModuleContainer} />
+    <Route path="/module/:moduleName" Component={ModuleContainer} />
     <Route path="/settings" Component={SettingsContainer} />
     <Route path="/contributors" Component={ContributorList} />
   </Routes>
