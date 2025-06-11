@@ -7,7 +7,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import { DARK_COLOR_SCHEME } from "@/types/settings";
 
 export default function ModuleContainer() {
-  const { moduleCode } = useParams();
+  const { moduleName } = useParams();
   const [module, setModule] = useState<Module | null>(null);
 
   const colorScheme = useColorScheme();
@@ -18,8 +18,9 @@ export default function ModuleContainer() {
 
   // future note: update this setEffect to fetch data from api
   useEffect(() => {
+    console.log(moduleName);
     const foundModule = placeholderModules.find(
-      (mod) => mod.code === moduleCode,
+      (mod) => mod.name === moduleName,
     );
 
     if (!foundModule) {
@@ -27,7 +28,7 @@ export default function ModuleContainer() {
     }
 
     setModule(foundModule);
-  }, [moduleCode]);
+  }, [moduleName]);
 
   // if module is not found, then just show the module not found message
   if (!module) {
