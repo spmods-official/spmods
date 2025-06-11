@@ -51,6 +51,10 @@ const Footer: FC = () => {
             </Link>
           </li>
         </ul>
+        
+        <div className={`mt-4 text-content-muted text-sm ${isMobile ? "text-center" : ""}`}>
+          This project is not affiliated with Singapore Polytechnic.
+        </div>
       </div>
     </footer>
   );
