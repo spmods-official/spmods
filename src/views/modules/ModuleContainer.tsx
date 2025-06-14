@@ -73,7 +73,7 @@ export default function ModuleContainer() {
           <div className="flex flex-col gap-y-2">
             <Remark42
               host="https://remark.spmods.org"
-              siteId="remark"
+              siteId="SPMods"
               theme={remarkTheme}
               components={["embed"]}
               noFooter={true}
