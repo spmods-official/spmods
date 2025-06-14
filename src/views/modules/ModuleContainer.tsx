@@ -21,7 +21,6 @@ export default function ModuleContainer() {
 
   // future note: update this setEffect to fetch data from api
   useEffect(() => {
-    console.log(moduleName);
     const foundModule = placeholderModules.find(
       (mod) => slugify(mod.name) === moduleName,
     );
@@ -73,7 +72,7 @@ export default function ModuleContainer() {
 
           <div className="flex flex-col gap-y-2">
             <Remark42
-              host="http://127.0.0.1:8080"
+              host="https://remark.spmods.org"
               siteId="remark"
               theme={remarkTheme}
               components={["embed"]}
