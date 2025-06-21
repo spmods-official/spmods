@@ -1,6 +1,7 @@
 import SectionHeader from "../components/SectionHeader";
 import { ButtonGroup, ButtonGroupItem } from "../components/ButtonGroup";
 import ResponsiveGrid from "../components/ResponsiveGrid";
+import ExternalLink from "../components/ExternalLink";
 
 export default function AboutContainer() {
   return (
@@ -95,11 +96,11 @@ export default function AboutContainer() {
             academic lives? Join our open-source initiative!
           </p>
           <div className="flex justify-center mt-auto">
-            <ButtonGroup>
-              <ButtonGroupItem href="https://docs.google.com/forms/d/e/1FAIpQLSctx7EgGZlMRD9Uu3tkZxDbhZNJUKSD6xSYs6mlf6D2ubqJCw/viewform">
-                Contributor Sign-Up
-              </ButtonGroupItem>
-            </ButtonGroup>
+            <ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSctx7EgGZlMRD9Uu3tkZxDbhZNJUKSD6xSYs6mlf6D2ubqJCw/viewform">
+              <ButtonGroup>
+                <ButtonGroupItem>Contributor Sign-Up</ButtonGroupItem>
+              </ButtonGroup>
+            </ExternalLink>
           </div>
         </div>
         <div className="flex-1 rounded-lg p-5 border dark:border-gray-600 my-5 flex flex-col">
@@ -110,11 +111,11 @@ export default function AboutContainer() {
             ideas.
           </p>
           <div className="flex justify-center mt-auto">
-            <ButtonGroup>
-              <ButtonGroupItem href="https://docs.google.com/forms/d/e/1FAIpQLSdIf8x_Yer6ZbihCJnK_8_Wn7Pb-6N41oPkyHFCJVjPGpA3rw/viewform">
-                Validation Survey
-              </ButtonGroupItem>
-            </ButtonGroup>
+            <ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSdIf8x_Yer6ZbihCJnK_8_Wn7Pb-6N41oPkyHFCJVjPGpA3rw/viewform">
+              <ButtonGroup>
+                <ButtonGroupItem>Validation Survey</ButtonGroupItem>
+              </ButtonGroup>
+            </ExternalLink>
           </div>
         </div>
       </ResponsiveGrid>

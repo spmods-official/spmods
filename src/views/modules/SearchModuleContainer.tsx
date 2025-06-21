@@ -104,7 +104,7 @@ export default function SearchModuleContainer() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search module code or name"
-              className="flex-1 p-4 rounded-lg border border-border bg-background text-content-primary"
+              className="flex-1 p-4 rounded-lg border border-border bg-background text-content-main"
             />
           </div>
         </div>
@@ -123,10 +123,10 @@ export default function SearchModuleContainer() {
                   onClick={() => navigate(`/module/${slugify(module.name)}`)}
                   className={`flex flex-col gap-2 ${isMobile ? "w-full" : "w-4/5"}`}
                 >
-                  <h3 className="font-bold text-lg text-content-primary">
+                  <h3 className="font-bold text-lg text-content-main">
                     {module.name}
                   </h3>
-                  <h4 className="text-content-secondary font-medium mb-2">
+                  <h4 className="text-content-main font-medium mb-2">
                     {module.school} • {module.creditUnit} Credits
                   </h4>
                   <p className="text-content-muted">{module.description}</p>
@@ -135,12 +135,12 @@ export default function SearchModuleContainer() {
                 <div
                   className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? "hidden" : ""}`}
                 >
-                  <div className="text-content-primary">
+                  <div className="text-content-main">
                     Year {module.year} • {module.elective ? "Elective" : "Core"}
                   </div>
 
                   <div className="flex flex-col items-start">
-                    <span className="mb-2 text-content-light">Offered By:</span>
+                    <span className="mb-2 text-content-muted">Offered By:</span>
                     <div className="flex flex-row gap-1">
                       {module.course.map((course) => (
                         <span
@@ -161,7 +161,7 @@ export default function SearchModuleContainer() {
                     </div>
                   </div>
 
-                  <div className="text-content-light mt-2">Workload:</div>
+                  <div className="text-content-muted mt-2">Workload:</div>
                   <div className="flex flex-col gap-1">
                     {Array.from({
                       length: Math.ceil(
@@ -195,13 +195,13 @@ export default function SearchModuleContainer() {
           <div
             className={`w-1/4 p-4 border border-border rounded-lg h-fit ${isMobile ? "hidden" : ""}`}
           >
-            <h3 className="font-bold text-lg mb-4 text-content-primary">
+            <h3 className="font-bold text-lg mb-4 text-content-main">
               Filters
             </h3>
 
             {/* Course Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">
+              <h4 className="font-medium mb-2 text-lg text-content-main">
                 Course
               </h4>
               <div className="pl-4">
@@ -224,7 +224,7 @@ export default function SearchModuleContainer() {
 
             {/* School Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">
+              <h4 className="font-medium mb-2 text-lg text-content-main">
                 School
               </h4>
               <div className="pl-4">
@@ -247,7 +247,7 @@ export default function SearchModuleContainer() {
 
             {/* Credit Units Filter */}
             <div className="mb-6">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">
+              <h4 className="font-medium mb-2 text-lg text-content-main">
                 Credit Units
               </h4>
               <div className="flex gap-2 items-center pl-4 pt-1">
@@ -259,7 +259,7 @@ export default function SearchModuleContainer() {
                   onChange={(e) =>
                     updateCreditRange("min", parseInt(e.target.value) || 1)
                   }
-                  className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
+                  className="w-16 p-1 rounded border border-border bg-background text-content-main text-sm"
                 />
                 <span className="text-content-muted">to</span>
                 <input
@@ -270,14 +270,14 @@ export default function SearchModuleContainer() {
                   onChange={(e) =>
                     updateCreditRange("max", parseInt(e.target.value) || 50)
                   }
-                  className="w-16 p-1 rounded border border-border bg-background text-content-primary text-sm"
+                  className="w-16 p-1 rounded border border-border bg-background text-content-main text-sm"
                 />
               </div>
             </div>
 
             {/* Elective Filter */}
             <div className="mb-4">
-              <h4 className="font-medium mb-2 text-lg text-content-primary">
+              <h4 className="font-medium mb-2 text-lg text-content-main">
                 Type
               </h4>
               <div className="pl-4">
