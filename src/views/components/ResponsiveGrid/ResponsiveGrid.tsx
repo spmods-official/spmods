@@ -19,7 +19,7 @@ export const ResponsiveGrid = ({
 }: PropsWithChildren<ResponsiveGridProps>) => {
   return (
     <div
-      className={cn(responsiveGridVariants({ base, md, lg, xl }), className)}
+      className={cn(responsiveGridVariants({ base, md, lg, xl, className }))}
       {...props}
     >
       {children}

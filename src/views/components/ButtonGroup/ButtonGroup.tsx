@@ -1,5 +1,6 @@
 import React from "react";
 import type { HTMLAttributes, PropsWithChildren, ReactElement } from "react";
+import { cn } from "@/utils/cn";
 
 import type {
   ButtonGroupVariantsProps,
@@ -16,10 +17,7 @@ interface ButtonGroupProps
 
 interface ButtonGroupItemProps
   extends HTMLAttributes<HTMLButtonElement>,
-    ButtonGroupItemVariantsProps {
-  href?: string;
-  external?: boolean;
-}
+    ButtonGroupItemVariantsProps {}
 
 const ButtonGroup = ({
   children,
@@ -37,7 +35,7 @@ const ButtonGroup = ({
 
   return (
     <div
-      className={buttonGroupVariants({ variant, size, radius, className })}
+      className={cn(buttonGroupVariants({ variant, size, radius, className }))}
       role="group"
       {...props}
     >
@@ -71,24 +69,8 @@ const ButtonGroupItem = ({
   children,
   active = false,
   onClick,
-  href,
-  external = false,
   ...props
 }: PropsWithChildren<ButtonGroupItemProps>) => {
-  if (href) {
-    return (
-      <a
-        href={href}
-        {...(external && {
-          target: "_blank",
-          rel: "noopener noreferrer",
-        })}
-        className={props.className}
-      >
-        {children}
-      </a>
-    );
-  }
   return (
     <button onClick={onClick} data-active={active} {...props}>
       {children}

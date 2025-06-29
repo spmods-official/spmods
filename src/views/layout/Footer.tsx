@@ -1,5 +1,6 @@
-import ExternalLink from "@/views/components/ExternalLink";
-import { externalLinkVariants } from "@/views/components/ExternalLink.variants";
+import ExternalLink, {
+  externalLinkVariants,
+} from "@/views/components/ExternalLink";
 import type { FC } from "react";
 import { Link } from "react-router";
 import useMediaQuery from "../hooks/useMediaQuery";
