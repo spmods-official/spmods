@@ -5,12 +5,18 @@ import type { BadgeVariantsProps } from "./Badge.variants";
 import { cn } from "@/utils/cn";
 
 interface BadgeProps
-    extends HTMLAttributes<HTMLSpanElement>,
-    BadgeVariantsProps { }
+  extends HTMLAttributes<HTMLSpanElement>,
+    BadgeVariantsProps {}
 
-const Badge = (
-    { className, intent, children, ...props }: PropsWithChildren<BadgeProps>) => (
-    <span className={cn(badgeVariants({ intent, className }))}>{children}</span>
+const Badge = ({
+  className,
+  intent,
+  children,
+  ...props
+}: PropsWithChildren<BadgeProps>) => (
+  <span className={cn(badgeVariants({ intent, className }))} {...props}>
+    {children}
+  </span>
 );
 
 Badge.displayName = "Badge";
