@@ -5,26 +5,26 @@ import type { ResponsiveGridVariantsProps } from "./ResponsiveGrid.variants";
 import { cn } from "@/utils/cn";
 
 interface ResponsiveGridProps
-  extends HTMLAttributes<HTMLDivElement>,
-    ResponsiveGridVariantsProps {}
+    extends HTMLAttributes<HTMLDivElement>,
+    ResponsiveGridVariantsProps { }
 
 export const ResponsiveGrid = ({
-  base,
-  md,
-  lg,
-  xl,
-  className,
-  children,
-  ...props
+    base,
+    md,
+    lg,
+    xl,
+    className,
+    children,
+    ...props
 }: PropsWithChildren<ResponsiveGridProps>) => {
-  return (
-    <div
-      className={cn(responsiveGridVariants({ base, md, lg, xl }), className)}
-      {...props}
-    >
-      {children}
-    </div>
-  );
+    return (
+        <div
+            className={cn(responsiveGridVariants({ base, md, lg, xl, className }))}
+            {...props}
+        >
+            {children}
+        </div>
+    );
 };
 
 export default ResponsiveGrid;
