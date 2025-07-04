@@ -1,36 +1,36 @@
-import { useEffect, useState, useMemo } from "react";
-import type { Module } from "@/types/module";
+import { useEffect, useMemo } from "react";
 import { useParams } from "react-router";
-import { placeholderModules } from "@/mocks/modules";
 import Remark42 from "../components/Remark42";
 import useColorScheme from "../hooks/useColorScheme";
 import { DARK_COLOR_SCHEME } from "@/types/settings";
-import { slugify } from "@/utils/slugify";
+import { useSelector } from "react-redux";
+import { selectModuleBySlug } from "@/slices/modules";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { selectModulesStatus, fetchAllModules } from "@/slices/modules";
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "@/app/configureStore";
+import type { CourseModuleType } from "@/types/module";
 
 export default function ModuleContainer() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const { moduleName } = useParams();
-  const [module, setModule] = useState<Module | null>(null);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const status = useSelector(selectModulesStatus);
+  const module = useSelector((state) => selectModuleBySlug(state, moduleName));
+
+  useEffect(() => {
+    // Only dispatch if the status is 'idle' to prevent re-fetching on every render
+    if (status === "idle") {
+      dispatch(fetchAllModules());
+    }
+  }, [dispatch, status]);
 
   const colorScheme = useColorScheme();
   const remarkTheme = useMemo(
     () => (colorScheme === DARK_COLOR_SCHEME ? "dark" : "light"),
     [colorScheme],
   );
-
-  // future note: update this setEffect to fetch data from api
-  useEffect(() => {
-    const foundModule = placeholderModules.find(
-      (mod) => slugify(mod.name) === moduleName,
-    );
-
-    if (!foundModule) {
-      return;
-    }
-
-    setModule(foundModule);
-  }, [moduleName]);
 
   // if module is not found, then just show the module not found message
   if (!module) {
@@ -40,6 +40,37 @@ export default function ModuleContainer() {
       </div>
     );
   }
+
+  const formatSpecilisationAndPathway = (items: string[]) => {
+    if (items.length === 0) return "";
+    if (items.length === 1) return items[0];
+    if (items.length === 2) return `${items[0]} or ${items[1]}`;
+
+    // For 3 or more items: join all but last with commas, then add "or" before the last item
+    const allButLast = items.slice(0, -1).join(", ");
+    const lastItem = items[items.length - 1];
+    return `${allButLast} or ${lastItem}`;
+  };
+
+  const moduleInfo = (course: CourseModuleType) => {
+    switch (course.moduleType) {
+      case "CCC":
+        return "via Common Core Curriculum";
+
+      case "CORE":
+        return "as a core module";
+
+      case "COURSE ELECTIVE":
+        return "as a course elective";
+
+      case "SPECIALISATION":
+        return `via the ${formatSpecilisationAndPathway(course.specialisationType)} specialisation`;
+
+      case "PATHWAY":
+        return `via the ${formatSpecilisationAndPathway(course.pathwayType)}`;
+    }
+  };
+
   return (
     <div className={`${isMobile ? "w-full" : "w-4/5"} h-full`}>
       <div className="text-content h-full flex flex-col">
@@ -49,7 +80,8 @@ export default function ModuleContainer() {
           </header>
 
           <div className="text-xl">
-            {module.school} • {module.creditUnit.toString()} Credit Units
+            {module.moduleProvider} • {module.creditUnit.toString()} Credit
+            Units
           </div>
         </div>
 
@@ -58,8 +90,17 @@ export default function ModuleContainer() {
         <div className="rounded-lg my-5">
           <h2 className="text-lg font-bold mb-4">Module description</h2>
           <p>{module.description}</p>
+
+          <p className="font-bold mb-2 mt-4">Available to:</p>
+          <ul>
+            {module.courses.map((course) => (
+              <li className="list-disc ml-6" key={course.course}>
+                {course.course} {moduleInfo(course)}
+              </li>
+            ))}
+          </ul>
           <p className="font-bold mt-4">
-            Workload - {module.creditUnit * 15} hrs / Week
+            Workload - {`${module.effortRequired}`}
           </p>
         </div>
 

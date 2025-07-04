@@ -1,0 +1,1011 @@
+[
+    {
+        "name": "Thinking Critically about the UN SDGs",
+        "description": "Develop critical and analytical thinking skills, along with the ability to present your point of view with credible and relevant evidence. Enhance your knowledge and appreciation of local and global issues covered in the 17 SDGs, with a focus on the former.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 2,
+        "effortRequired": "30 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Data Fluency",
+        "description": "Develop data fluency skills such as formulating questions, processing and analysing data to articulate numerical and graphical summaries. Build a simple data dashboard to generate insights and support a solution for a chosen SDG.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Artificial Intelligence and its Impact",
+        "description": "Learn the broad overview of Artificial Intelligence (AI) and its societal and ethical impact on modern society. Build a simple AI model with a drag-and-drop tool and consider how the use of AI can address a chosen SDG.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Persuasive Communication with Data Storytelling",
+        "description": "Develop data visualisation skills and apply narrative elements and persuasive delivery techniques to communicate data effectively. Learn to craft compelling narratives, based on hard facts and data, to call stakeholders into taking action to tackle the SDGs.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 2,
+        "effortRequired": "30 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Problem Solving with Creative & Computational Thinking",
+        "description": "Appreciate the use of both creative and computational thinking skills to solve a SDG-related problem. Apply focused and diffuse thinking , brainstorming techniques, and the four pillars of computational thinking to a chosen SDG.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Digital Communication for Impact",
+        "description": "Leverage digital communication to engage, inspire and impact stakeholders diligently. Learn about responsible Digital Citizenship and how you can create engaging and impactful messages through various digital platforms and tools.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Collaboration in the Digital Age",
+        "description": "Find out what goes into a healthy and productive team where ideas, insights, and responsibilities are shared meaningfully. Sharpen your interpersonal and communication skills to collaborate effectively in a digital environment.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Effective Writing for the Workplace",
+        "description": "Acquire the skills needed to write in clear and concise English to effectively communicate an intended message to your target audience. Apply these skills when writing for specific contexts, such as scenarios related to the SDGs.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 1,
+        "effortRequired": "15 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Personal Branding and Career Agility",
+        "description": "Get a head start in your career with the necessary skill sets, knowledge and tools to create your very own personal brand. Learn effective strategies to set yourself apart from the competition, and put it to good use and create awareness about the SDGs.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 2,
+        "effortRequired": "30 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "Sustainable Innovation Project",
+        "description": "Work in multi-disciplinary groups to apply design thinking methods, backed by research and qualitative data, to tackle local sustainable issues mapped to the SDGs. Tap into knowledge and skills learnt in CCC modules to create innovative prototypes for real-life issues faced by local communities.",
+        "moduleProvider": "Life Skills & Communication",
+        "creditUnit": 3,
+        "effortRequired": "45 hours",
+        "courses": [
+            {
+                "course": "All courses",
+                "moduleType": "CCC",
+                "yearTaken": null
+            }
+        ]
+    },
+    {
+        "name": "AI & Machine Learning",
+        "description": "Provides students with the fundamental concepts in Artificial Intelligence (AI) and Machine Learning. The module aims to provide students with hands-on experience in building applications that use machine learning and neural networks. The students will also learn skills to build intelligent agents, such as Chatbots and integrate cognitive service APIs to add intelligence into their applications.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "AI & Analytics"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Back-End Web Development",
+        "description": "Aim to equip students with the skill in developing database driven web application. Students will learn about server-side programming and be able to create-database-driven web applications using a scripting language and programming frameworks.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 6,
+        "effortRequired": "90 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Education and Career Guidance",
+        "description": "This module aims to help students discover their strengths, values and interests. It also supports students in making informed educational and career choices to achieve their career aspirations.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 2,
+        "effortRequired": "30 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Front-End Web Development",
+        "description": "Aims to equip students with the knowledge and skills in developing effective front-end web applications using Hypertext Markup Language (HTML) and Cascading Stylesheets (CSS). Students will learn to use front-end web development frameworks to further enhance their ability for rapid prototyping responsive web application.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCITP",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Fundamentals of Computing",
+        "description": "This module aims to provide students with an understanding of computer networking concepts and hands-on sessions on with operating systems using Command-Line Interfaces. Students will be taught on the use of various UNIX commands / system tools for user management, software installation, network administration and configuration of services. These topics are essential and prerequisite to an Application Developer for building and deployment of a software system.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCITP",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Fundamentals of Programming",
+        "description": "Aims to help students pick up a programming language and learn how to solve and automate tasks through programming. Students will be taught programming fundamentals such as variables, data types, operators, control structures, methods and data structures such as arrays. At the end of the module, students will be competent in using programming for problem solving.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCITP",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Mathematics",
+        "description": "Equips students with knowledge in mathematics and analytical skills to solve problems related to infocomm technology. Topics include matrices, linear transformation, number systems, set theory, logic, Boolean algebra, techniques of counting and probability.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCITP",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Programming for Data Analytics",
+        "description": "Provides students with the fundamental skills to code applications to retrieve, manipulate, process and analyze data using the Python programming language. Students will learn to code in the Python Programming Language and key concepts such as exploratory data analysis and perform data analysis using Numpy, Pandas and Statsmodels on the data to gain useful insights for business decisions.",
+        "moduleType": "CORE",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            },
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "AI & Analytics"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Statistics for Data Science",
+        "description": "Provides students with an introduction to elementary probability theory and statistical concepts and principles that lay the foundation to understand and learn the statistical procedures and methods. Topics include descriptive statistics, rules of probability, probability distributions of discrete and continuous random variables, sampling distributions, statistical estimation and hypothesis testing.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 3,
+        "effortRequired": "45 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Agile MLOps",
+        "description": "This module provides students with an overview of Agile methodologies and Machine Learning Operations (MLOps) to enhance the efficiency and reliability of machine learning (ML) project development and delivery. It covers essential practices for planning ML project using the Agile framework, managing data and ML models, developing ML applications with continuous integration and deployment, and monitoring of ML models in the production environment. Students will learn Agile project management, MLOps and Container tools and gain hands-on experience in automating workflows to build robust machine learning projects.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Data Engineering",
+        "description": "The module covers the fundamental concepts to build and work with data pipelines. Students are taught how to work with relational database, non-relational (NoSQL) database, and large data stores such as data warehouses and how to integrate data from multiple data sources into a single repository using Extract, Transform and Load (ETL) workflows.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Data Structures & Algorithm (AI)",
+        "description": "Aims to teach students advanced Object-Oriented concepts and data structures and algorithms using Python. Through this module, students will learn how to implement stacks, queues, linked lists, dictionaries and solve problems using these data structures. Algorithms to improve code efficiency and search will also be taught.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Data Visualisation",
+        "description": "This module aims to equip students with techniques for creating impactful reports and interactive dashboards, enabling organisations to extract deeper insights from their business data. Students will learn best practices for developing effective data visualisations using popular industry tools such as Tableau and Python. By the end of this module, students will be proficient in building and deploying comprehensive visual reporting solutions that drive informed business decisions.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Deep Learning",
+        "description": "This module teaches students deep neural network architectures and its practical applications. Students will learn to frame problems and prepare machine trainable datasets. They will apply deep learning frameworks such as Tensorflow, Keras, and PyTorch, to train deep learning models. Eventually, students will create and train their own deep learning models in various applications such as image recognition using convolutional neural networks, natural language processing using recurrent neural networks, creative deep learning using generative AI, as well as problem solving using reinforcement learning.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Mathematics for AI",
+        "description": "The module equips students with key mathematical concepts in data mining, machine learning, data preparation, and model building. Students will delve into topics such as linear algebra, principal component analysis (PCA), differentiation, applications of derivatives and partial derivatives. Additionally, students will gain proficiency in numerical algorithms used to solve mathematical equations and programming skills to carry out higher-order differentiation.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Big Data Technologies",
+        "description": "This module provides students with an understanding of what Big Data is, why it is needed and how Big Data pipelines are being implemented using Apache Spark. Apache Spark is a powerful platform that provides ways to store and utilize big data. Students will analyze data using Hadoop & Spark SQL and demonstrate how to create a streaming analytics application using Spark Streaming.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "COURSE ELECTIVE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Generative AI with Large Language Models",
+        "description": "The module introduces students to Generative AI and Large Language Models (LLM). The module offers a deep dive into Transformer architecture, the backbone of LLM. Students will extend their knowledge beyond theory, gaining practical skills in fine-tuning LLMs and developing applications using LLM frameworks like LangChain, LlamaIndex, HayStack, RAGatouille and Embedchain. They will also master techniques such as prompt tuning and prompt engineering to refine LLM output, and interface LLMs and agents with their datasets to create AI applications.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "COURSE ELECTIVE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Graph Analytics for Data Science",
+        "description": "This module aims to teach students the fundamental concepts of graph theory and knowledge graphs, equipping them with the skills to effectively design graph data models, write graph query language and build graph applications. Students will learn how to apply the algorithms such as pathfinding, community detection, centrality measures to solve real-world problems. Through hands-on exploration, students will gain a deep understanding of graph traversal algorithms and their practical applications, enabling them to extract valuable insights and meaning from complex graph structures.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "COURSE ELECTIVE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DAAA (44 weeks)",
+        "description": "Provides students with work exposure to an industrial environment, with opportunity to relate what is taught in the classroom to actual work situation. It creates a valuable learning opportunity for students to sharpen their skills and knowledge, as well as contributing to the development tasks of participating organisations.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 34,
+        "effortRequired": "44 weeks",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "Year-Long Internship Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DAAA (22 weeks)",
+        "description": "Provides students with work exposure to an industrial environment, with opportunity to relate what is taught in the classroom to actual work situation. It creates a valuable learning opportunity for students to sharpen their skills and knowledge, as well as contributing to the development tasks of participating organisations.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 17,
+        "effortRequired": "22 weeks",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "Industry Project Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Applied AI and Analytics Project",
+        "description": "Provides students an opportunity to integrate the knowledge and technical skills they have acquired from the course, and experience the AI and Analytics workflow (Problem Framing /Data Exploration; Preparation / Data Engineering / Feature Engineering / Analytics and Computational Modelling / Data Analysis / Data Visualization), problem solving, project management, communication and working in a team to implement an AI and Analytics project. The project can be based on any AI or Analytics application area, subject to the approval of the school.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 18,
+        "effortRequired": "270 hours",
+        "courses": [
+            {
+                "course": "DAAA",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "University Pathway",
+                    "Industry Project Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Computer Organisation",
+        "description": "The module aims to provide students with an understanding of computer architecture and networking concepts and hands-on sessions on with operating systems using Command Line Interfaces. Students will be taught on the use of various UNIX commands / system tools for user management, software installation, network administration and configuration of services, client/server architecture and basic of cloud computing. These topics are essential and prerequisite to an Application Developer for building, deployment and operation of a software system.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Data Structures & Algorithms",
+        "description": "This module introduces fundamental data structures and algorithms, linking each to a practical application in different subfields of computer science. Through this approach, students will learn essential concepts such as stacks, queues, linked lists, abstract data types, and hash tables while also gaining insight into areas like programming language design, networking, AI, and cybersecurity.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Design for User Interaction",
+        "description": "Equips students with the knowledge in designing interactive interfaces for various platforms, such as web and mobile, to provide pleasant user experience. They will be equipped with skills to create interactive prototype using prototyping tools.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Programming Methodology",
+        "description": "The module aims to teach students programming fundamentals and problem-solving concepts. The module helps students pick up their first programming language and learn how to solve and automate tasks through programming. Students will be taught programming fundamentals such as variables, data types, operators, control structures, functions, arrays and object literals. At the end of the module, students will be competent in using programming for problem solving.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Continuous Integration and Continuous Delivery",
+        "description": "This module introduces concepts of Continuous Integration and Continuous Delivery (CI/CD), along with relevant libraries to implement them. Students will also learn libraries and frameworks to enhance applications and the developer's experience. Students will apply these concepts by the continual integration of changes with teammates to enhance an application, and the continuous delivery of those changes while ensuring operability of the application.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 6,
+        "effortRequired": "90 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Database Systems",
+        "description": "This module introduces the fundamental concepts of Relational Databases such as modelling and designing relational databases, writing SQL queries, and the use of indexes and keys. Students will apply these concepts by designing tables of a relational data store and building a stateful application to interact with it.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 6,
+        "effortRequired": "90 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Secure Coding",
+        "description": "This module covers the concepts and fundamentals of secure coding principles, and techniques to prevent security vulnerabilities in web applications. Through a series of hacking and coding practical exercises, students will learn the implications of insecure code in applications and subsequently how to defend their web applications against potential hackers by coding securely.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Software Engineering Practice",
+        "description": "Aims to give students a practical experience of software development from implementation, testing to deployment of enterprise applications. Students will learn development techniques and gain in-depth knowledge of Information Systems architecture, technical documentation with the Unified Modelling Language and versioning control through an IT system. This module will apply Agile project development methodologies in managing software development. At the end of the module, students will develop a deep practical understanding of Software Engineering and appreciation of the documentation issues that impact system knowledge-transfers.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DCS (44 weeks)",
+        "description": "Students will intern at selected local or overseas organizations to further sharpen their IT skills and knowledge, through working on real-life projects in the areas of their study. Students contribute to the organizations by applying what they have learnt, while also learning and gaining experience from a real-life working environment.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 44,
+        "effortRequired": "270 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "CORE",
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Software Application Project",
+        "description": "This module provides students an opportunity to integrate knowledge and technical skills they have acquired from the course and experience problem solving, project management, communication and working as a team to develop IT applications. The project can be based on any IT application area, subject to the approval of the school, and can be implemented using any software and hardware platform available in the school.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 18,
+        "effortRequired": "270 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "University Pathway",
+                    "Industry Project Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DCS (22 weeks)",
+        "description": "Students will intern at selected local or overseas organizations to further sharpen their IT skills and knowledge, through working on real-life projects in the areas of their study. Students contribute to the organizations by applying what they have learnt, while also learning and gaining experience from a real-life working environment.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 17,
+        "effortRequired": "22 weeks",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "Industry Project Pathway"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Digital Forensics and Investigation",
+        "description": "Equips students with the fundamental concepts and techniques of computer and mobile forensics. Students will learn to acquire, analyse and present both computer and mobile data as evidence. This module will cover tools and techniques of computer and mobile forensics, data recovery, imaging and storage of electronic evidence.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Cloud Foundations & Security",
+        "description": "This module introduces cloud computing principles, architecture, and services, with a focus on security practices. Students will also learn about cloud infrastructure management and key technologies. The module emphasizes cloud security, including identity management, data protection, compliance, and threat mitigation. Students will explore best practices for securing cloud environments, as well as the challenges of maintaining privacy and regulatory compliance in the cloud.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Cloud Computing & Cybersecurity"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Ethical Hacking Essentials",
+        "description": "This module introduces students to tools to discover and exploit vulnerabilities in networks and operating systems. They will be taught the security issues found in software, especially web applications and security components like firewalls and IDS (Intrusion Detection Systems) will also be introduced as countermeasures to defend against cyber-attacks.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            },
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Cloud Computing & Cybersecurity"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Digital Visual Design",
+        "description": "Aims to train the students on the use of image processing and painting tools for web and interactive applications design. Students will learn the techniques in digital imaging using Adobe Photoshop. Basic design principles like colour theory, typography layout and design elements will be covered in this module. Emphasis is positioned on structuring the studentsÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ concept and helping them to develop their visual thinking. Basic photography skills will also be taught to help students to capture still images to use in their design.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "User Experience"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "User Interface Design",
+        "description": "In this module, students will develop a deep understanding of User Interface (UI) design beyond visual aesthetics to design mobile websites and applications with excellent usability. Students will explore visual principles and techniques specific to the UI design process to create visually appealing and cohesive UI designs. Through hands-on exercises and practical assignments, students will explore best practices specific to industry tools such as Figma, creating design components, animating prototypes. By the end of the module, students will learn how to turn wireframes and interaction architecture into interactive prototypes that can be tested with prospective users and iteratively refined into a high quality design that is ready for a hand-off to the development team for implementation.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCS",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "User Experience"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Infocomm Security and Network Fundamentals",
+        "description": "This module introduces students to the fundamental concepts of infocomm security such as identification, authentication, authorisation, integrity and confidentiality. Students will also learn basic network devices, functions, standards, and protocols and will acquire basic networking skills like designing and setting up a local area network.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Linux Administration and Security",
+        "description": "Teaches students on the use of various Linux commands / system tools for user management, security administration, software installation, network administration and configuration of services. Students will also learn how to secure the Linux operating system.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 1
+            }
+        ]
+    },
+    {
+        "name": "Applied Cryptography",
+        "description": "Teaches students the principles and application of cryptography to secure data and network. Different encryption algorithms and techniques will be introduced, including conventional and public-key cryptography, authentication and digital signatures. Students will learn to apply these concepts to secure and authenticate electronic mails and messages. Key management, digital certificates and public-key infrastructure will be discussed to understand the deployment of public-key cryptography.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Data Protection for Cyber Security",
+        "description": "The module will examine the data life cycle processes and cases involving computer hacking, denial of service, modification of data, distortion and fabrication of information. Students will examine the Personal Data Protection Act (PDPA), Data Protection Practices for Information Communication Technology (ICT) Systems, Confidential Computing and Computer Misuse and Cybersecurity Act (CMCA) when dealing with the various cyber threats issues and data protection practices.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 3,
+        "effortRequired": "45 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Malware Reverse Engineering",
+        "description": "Equips students with the basic knowledge of malware analysis to reverse-engineer the malware using practical tools and techniques. The three phases of behavioral, code and memory analysis of malware will be taught. Students will learn how to explore and understand the key characteristics of malware and the techniques of reverse-engineering compiled Windows executables and browser-based malware.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Securing Microsoft Windows",
+        "description": "Aims at equipping the students with hands-on knowledge in securing and hardening a Windows operating system. The course will cover the security mechanism used in the operating system, configuring different levels of security measures, best practices and security related tools and utilities.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 5,
+        "effortRequired": "75 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "CORE",
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Industrial Control Systems Cyber Range Essentials",
+        "description": "This module aims to teach tools to discover and exploit vulnerabilities in simulated and ICS Cyber Range Environment. It will also cover security issues and weaknesses of ICS protocols, different attack surfaces and types of exploits targeted at PLCS. Students will learn what the best practices for securing ICS are, how to deploy countermeasures to defend against cyber-attacks. Student will work in groups to protect and defend against simulated cyber attacks using tools, techniques learned in this module.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Cyber Offensive and oPerational Technology (COPT)"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Offensive Security",
+        "description": "Students are taught offensive skills for the organisation's wired and wireless networks in order to protect important assets against hackers. Students will have the opportunity to integrate the knowledge and technical skills learned by taking part in scenario based exercises, as well as learning the mindset required to be a successful penetration tester.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Cyber Offensive and oPerational Technology (COPT)"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Cybersecurity Infrastructure Configuration",
+        "description": "This module provides the student with a general understanding and hands-on practice of how to install, configure, and manage network devices, such as switches, routers, firewalls for defense of enterprise network architecture. Students will learn the theory and configuration steps for setting up the security, networking, threat prevention, logging, and reporting features of the network security technologies.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Cyber Defence Security (CDS)"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Advanced Digital Forensics",
+        "description": "The module equips students with the advanced concepts and techniques in Memory forensics, Internet of Things (IOT) forensics and Cloud Forensics. Students will learn how to handle cases through hands-on exercises in an integrated-scenario approach. Students will be able to process and examine the evidence, explore and recover the most relevant information in a more in-depth way to prepare and present the final findings.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Security Incident Management (SIM)"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Security Policy and Incident Management",
+        "description": "This module equips students with the fundamental concepts and techniques of security policy and incident management. Students will learn the essentials of security policy development, risk assessments and security models. Students will also learn to monitor security events, perform network forensics analysis and proactive detection of attacks, and be introduced to security incident response.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 4,
+        "effortRequired": "60 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "SPECIALISATION",
+                "specialisationType": [
+                    "Security Incident Manageent (SIM)"
+                ],
+                "yearTaken": 2
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DCDF (44 weeks)",
+        "description": "Students are sent to intern at selected local and overseas organisations to further develop their functional and technical skills through working on real-life projects in the area of their study such as info-comm security, IT security operations, governance, risk and compliance. Students contribute to the organisations by applying what they have learnt, while also learning and gaining experience from a real-life IT working environment.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 34,
+        "effortRequired": "44 weeks",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "Year-Long Internship Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "Internship Programme - DCDF (22 weeks)",
+        "description": "Students are sent to intern at selected local and overseas organisations to further develop their functional and technical skills through working on real-life projects in the area of their study such as info-comm security, IT security operations, governance, risk and compliance. Students contribute to the organisations by applying what they have learnt, while also learning and gaining experience from a real-life IT working environment.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 17,
+        "effortRequired": "22 weeks",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "Industry Project Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    },
+    {
+        "name": "InfoSec Project Development and Management",
+        "description": "Provides students with an opportunity to integrate knowledge and technical skills learnt from the DCDF course. The students will do a project related to Information Security and in the process, learn problem solving, communication and teamwork. In the project, the students are to apply problem analysis, investigation, solution design and implementation skills. In addition, project management will also be taught.",
+        "moduleProvider": "School of Computing",
+        "creditUnit": 18,
+        "effortRequired": "270 hours",
+        "courses": [
+            {
+                "course": "DCDF",
+                "moduleType": "PATHWAY",
+                "pathwayType": [
+                    "University Pathway",
+                    "Industry Project Pathway"
+                ],
+                "yearTaken": 3
+            }
+        ]
+    }
+]
