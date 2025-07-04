@@ -12,6 +12,7 @@ import {
 } from "@/slices/settings";
 import { useDispatch, useSelector } from "react-redux";
 import { ButtonGroup, ButtonGroupItem } from "../components/ButtonGroup";
+import type { AppDispatch } from "@/app/configureStore";
 
 type ModeOption = {
   label: string;
@@ -34,7 +35,7 @@ const MODES: Readonly<ModeOption[]> = [
 ];
 
 export const ModeSelect: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const currentColor = useSelector<RootState, ColorSchemePreference>((state) =>
     selectColorSchemePreference(state),
   );

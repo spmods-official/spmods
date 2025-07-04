@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { placeholderModules } from "@/mocks/modules";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { slugify } from "@/utils/slugify";
 import Badge from "../components/Badge";
+import {
+  selectModules,
+  selectModulesError,
+  selectModulesStatus,
+  fetchAllModules,
+} from "@/slices/modules";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "@/app/configureStore";
 
 export default function SearchModuleContainer() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -12,73 +20,80 @@ export default function SearchModuleContainer() {
     courses: [] as string[],
     schools: [] as string[],
     creditRange: { min: 1, max: 50 },
-    elective: "all" as "all" | "core" | "elective",
   });
   const navigate = useNavigate();
 
-  const options: { value: "all" | "core" | "elective"; label: string }[] = [
-    { value: "all", label: "All" },
-    { value: "core", label: "Core" },
-    { value: "elective", label: "Elective" },
-  ];
+  const dispatch = useDispatch<AppDispatch>();
+  const modules = useSelector(selectModules);
+  const status = useSelector(selectModulesStatus);
+  const error = useSelector(selectModulesError);
+
+  useEffect(() => {
+    // Only dispatch if the status is 'idle' to prevent re-fetching on every render
+    if (status === "idle") {
+      dispatch(fetchAllModules());
+    }
+  }, [dispatch, status]);
+
+  if (status === "loading") {
+    return <div>Loading modules...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error loading modules: {error}</div>;
+  }
+
+  if (modules.length === 0 && status === "succeeded") {
+    return <div>No modules found.</div>;
+  }
 
   // Get unique courses from data
   const availableCourses = [
-    ...new Set(placeholderModules.flatMap((module) => module.course)),
+    ...new Set(
+      modules.flatMap((module) =>
+        module.courses.map((course) => course.course),
+      ),
+    ),
   ].sort();
 
   // Get unique schools from data
   const availableSchools = [
-    ...new Set(placeholderModules.map((module) => module.school)),
+    ...new Set(modules.map((module) => module.moduleProvider)),
   ].sort();
 
-  const filteredModules = placeholderModules.filter((mod) => {
+  const filteredModules = modules.filter((mod) => {
     const matchesSearch = mod.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
 
     const matchesCourse =
       filters.courses.length === 0 ||
-      filters.courses.some((course) => mod.course.includes(course));
+      filters.courses.some(
+        (course) =>
+          mod.courses.map((course) => course.course).includes("All courses") ||
+          mod.courses.map((course) => course.course).includes(course),
+      );
 
     const matchesSchool =
-      filters.schools.length === 0 || filters.schools.includes(mod.school);
+      filters.schools.length === 0 ||
+      filters.schools.includes(mod.moduleProvider);
 
     const matchesCredits =
       mod.creditUnit >= filters.creditRange.min &&
       mod.creditUnit <= filters.creditRange.max;
 
-    const matchesElective =
-      filters.elective === "all" ||
-      (filters.elective === "elective" && mod.elective) ||
-      (filters.elective === "core" && !mod.elective);
-
-    return (
-      matchesSearch &&
-      matchesCourse &&
-      matchesSchool &&
-      matchesCredits &&
-      matchesElective
-    );
+    return matchesSearch && matchesCourse && matchesSchool && matchesCredits;
   });
-
-  // Define a union type for the value parameter based on the filter type
-  type FilterValue<T extends Exclude<keyof typeof filters, "creditRange">> =
-    T extends "elective" ? "all" | "core" | "elective" : string;
 
   const toggleFilter = <T extends Exclude<keyof typeof filters, "creditRange">>(
     type: T,
-    value: FilterValue<T>,
+    value: string,
   ) => {
     setFilters((prev) => {
-      if (type === "elective") {
-        // Value is guaranteed to be "all" | "core" | "elective" here
-        return { ...prev, [type]: value };
-      }
-      // If not elective, type must be "courses" or "schools"
+      // Type must be "courses" or "schools"
       // Value is guaranteed to be string here
-      const currentArray = prev[type] as string[]; // Cast is safe as type is "courses" or "schools"
-      const newArray = currentArray.includes(value as string) // Cast value to string for includes/filter
+      const currentArray = prev[type];
+      const newArray = currentArray.includes(value as string)
         ? currentArray.filter((item) => item !== value)
         : [...currentArray, value as string];
       return { ...prev, [type]: newArray };
@@ -97,7 +112,7 @@ export default function SearchModuleContainer() {
 
   return (
     <div>
-      <div className="container mx-auto text-gray-900 dark:text-white">
+      <div className="px-8 py-2 mx-auto text-gray-900 dark:text-white">
         <div className="my-4 text-xl">
           <div className="flex gap-4">
             <input
@@ -128,7 +143,7 @@ export default function SearchModuleContainer() {
                     {module.name}
                   </h3>
                   <h4 className="text-content-main font-medium mb-2">
-                    {module.school} • {module.creditUnit} Credits
+                    {module.moduleProvider} • {module.creditUnit} Credits
                   </h4>
                   <p className="text-content-muted">{module.description}</p>
                 </div>
@@ -136,44 +151,17 @@ export default function SearchModuleContainer() {
                 <div
                   className={`flex flex-col w-1/5 min-w-[15vw] pl-4 items-start justify-between text-sm ${isMobile ? "hidden" : ""}`}
                 >
-                  <div className="text-content-main">
-                    Year {module.year} • {module.elective ? "Elective" : "Core"}
-                  </div>
-
                   <div className="flex flex-col items-start">
-                    <span className="mb-2 text-content-muted">Offered By:</span>
-                    <div className="flex flex-row gap-2">
-                      {module.course.map((course) => (
-                        <Badge intent="default" key={course}>
-                          {course}
+                    <span className="mb-2 font-bold text-content">
+                      Offered By:
+                    </span>
+                    <div className="flex flex-row gap-2 flex-wrap gap-y-3">
+                      {module.courses.map((course) => (
+                        <Badge intent="default" key={course.course}>
+                          {course.course} - {course.moduleType}
                         </Badge>
                       ))}
                     </div>
-                  </div>
-
-                  <div className="text-content-muted mt-2">Workload:</div>
-                  <div className="flex flex-col gap-1">
-                    {Array.from({
-                      length: Math.ceil(
-                        Math.ceil(Number(module.totalHours) / 15) / 6,
-                      ),
-                    }).map((_, rowIndex) => (
-                      <div key={rowIndex} className="flex flex-row gap-1">
-                        {Array.from({
-                          length: Math.min(
-                            6,
-                            Math.ceil(Number(module.totalHours) / 15) -
-                              rowIndex * 6,
-                          ),
-                        }).map((_, i) => (
-                          <div
-                            key={rowIndex * 6 + i}
-                            className="w-4 h-4 bg-amber-800 rounded-sm"
-                            title={`${15 * (rowIndex * 6 + i + 1)} hours`}
-                          />
-                        ))}
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>
@@ -262,30 +250,6 @@ export default function SearchModuleContainer() {
                   }
                   className="w-16 p-1 rounded border border-border bg-background text-content-main text-sm"
                 />
-              </div>
-            </div>
-
-            {/* Elective Filter */}
-            <div className="mb-4">
-              <h4 className="font-medium mb-2 text-lg text-content-main">
-                Type
-              </h4>
-              <div className="pl-4">
-                {options.map((option) => (
-                  <label
-                    key={option.value}
-                    className="flex items-center mb-1 text-content-muted"
-                  >
-                    <input
-                      type="radio"
-                      name="elective"
-                      checked={filters.elective === option.value}
-                      onChange={() => toggleFilter("elective", option.value)}
-                      className="mr-2"
-                    />
-                    {option.label}
-                  </label>
-                ))}
               </div>
             </div>
           </div>
